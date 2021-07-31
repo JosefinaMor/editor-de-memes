@@ -4,13 +4,10 @@
 }
 
 body{
-    display: flex;
-    margin: 0;
-}
-main{
-    width: 100vw;
-    background-color: #3b2a4b;
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 .barraNavegacion{
     background-color: #1a1221;
@@ -19,6 +16,8 @@ main{
     justify-content: center;
     align-items: center;
     padding: 10px 0;
+    position: fixed;
+    z-index: 1;
 }
 nav{
     display: flex;
@@ -54,4 +53,32 @@ li button:hover{
 }
 button i {
     margin-right: 5px;
+}
+main{
+    background-color: #3b2a4b;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.conteiner{
+    border: 1px solid #ffffff;
+    margin-top: 130px;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.botonDescargar{
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    background-color: #1a9c25;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 10px;
+    margin: 40px 0;
 }
