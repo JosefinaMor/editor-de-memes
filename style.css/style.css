@@ -11,6 +11,7 @@ body{
 }
 .barraNavegacion{
     background-color: #1a1221;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -81,4 +82,58 @@ main{
     font-size: 15px;
     padding: 10px;
     margin: 40px 0;
+}
+.botonDescargar:hover{
+    background-color: #13771b;
+}
+.imagen{
+    background-color: #3b2a4b;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    width: 300px;
+    padding: 20px;
+    overflow: auto;
+    position: absolute;
+    right: 1px;
+    z-index: 2;
+}
+aside div{
+margin: 10px 0;
+}
+.titulo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.botonEscape{
+    border: none;
+    outline: none;
+    background-color: #3b2a4b;
+    color: #ffffff;
+    align-items: flex-end;
+    font-size: 25px;
+}
+.filtros{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.texto{
+    background-color: #3b2a4b;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    width: 300px;
+    padding: 20px;
+    overflow: auto;
+    position: absolute;
+    right: 1px;
+    z-index: 2;
 }
