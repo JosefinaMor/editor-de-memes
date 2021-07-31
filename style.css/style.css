@@ -137,3 +137,25 @@ margin: 10px 0;
     right: 1px;
     z-index: 2;
 }
+.textoInferiorYSuperior{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.fuente{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.fuente input{
+    width: 100px;
+}
+.colorYFondo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.inputsColorYfondo{
+    display: flex;
+    justify-content: space-between;
+}
