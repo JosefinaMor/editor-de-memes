@@ -135,7 +135,7 @@ margin: 10px 0;
 aside{
     background-color: #251b2f;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     height: 100vh;
@@ -150,6 +150,9 @@ aside{
     color: #000000;
     background-color: #fafafa;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+.mostrarAside{
+    display: flex;
 }
 .textoInferiorYSuperior{
     display: flex;
