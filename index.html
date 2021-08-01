@@ -14,17 +14,18 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <title>Editor de memes</title>
+    
 </head>
 
 <body>
     <header>
-        <div class="barraNavegacion">
+        <div id="barraNavegacion" class="barraNavegacion">
             <nav>
                 <h1>Generador de Memes</h1>
                 <ul>
                     <li><button><i class="fas fa-file-image"></i>Imagen</button></li>
                     <li><button><i class="fas fa-font"></i>Texto</button></li>
-                    <li><button><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
+                    <li><button id="modo-claro"><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
                 </ul>
             </nav>
         </div>
@@ -41,7 +42,7 @@
         </div>
         <button class="botonDescargar"><i class="fas fa-download"></i>Descaragar meme</button>
     </main>
-    <aside class="imagen">
+    <aside id="asideImagen">
         <div class="titulo">
             <h2>IMAGEN</h2>
             <button class="botonEscape"><i class="far fa-times-circle"></i></button>
@@ -97,7 +98,7 @@
             </div>
         </div>
     </aside>
-    <aside class="texto">
+    <aside id="asideTexto">
         <div class="titulo">
             <h2>IMAGEN</h2>
             <button class="botonEscape"><i class="far fa-times-circle"></i></button>
@@ -127,9 +128,9 @@
                 </select>
                 <div>
                     <input type="number">
-                    <button><i class="fas fa-align-left"></i></button>
-                    <button><i class="fas fa-align-center"></i></button>
-                    <button><i class="fas fa-align-right"></i></button>
+                    <button class="botones"><i class="fas fa-align-left"></i></button>
+                    <button class="botones"><i class="fas fa-align-center"></i></button>
+                    <button class="botones"><i class="fas fa-align-right"></i></button>
                 </div>
             </div>
         </div>
@@ -137,11 +138,11 @@
             <div class="inputsColorYfondo">
             <div>
                 <h3>COLOR</h3>
-                <input type="color">
+                <label for="" class="inputColor"><input type="color">#000000</label>
             </div>
             <div>
                 <h3>FONDO</h3>
-                <input type="color">
+                <label for="" class="inputColor"><input type="color">#000000</label>  
             </div>
         </div>
             <label for=""><input type="checkbox">Fondo transparente</label>
@@ -149,9 +150,9 @@
         <div>
             <h3>CONTORNO</h3>
             <div>
-                <button>Ninguno</button>
-                <button>Claro</button>
-                <button>Oscuro</button>
+                <button class="botones">Ninguno</button>
+                <button class="botones">Claro</button>
+                <button class="botones">Oscuro</button>
             </div>
         </div>
         <div>
@@ -170,6 +171,7 @@
             </select>
         </div>
     </aside>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
