@@ -14,7 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <title>Editor de memes</title>
-    
+
 </head>
 
 <body>
@@ -22,7 +22,7 @@
         <div id="barraNavegacion" class="barraNavegacion">
             <nav>
                 <h1>Generador de Memes</h1>
-                <ul>
+                <ul id="botonesDelNav">
                     <li><button id="botonAsideImagen"><i class="fas fa-file-image"></i>Imagen</button></li>
                     <li><button id="botonAsideTexto"><i class="fas fa-font"></i>Texto</button></li>
                     <li><button id="modo-claro"><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
@@ -31,13 +31,13 @@
         </div>
     </header>
     <main>
-        <div class="conteiner">
+        <div id="conteiner-meme" class="conteinerMeme">
             <div class="textoArriba">
-                <h3>TOP TEXT</h3>
+                <p>TOP TEXT</p>
             </div>
-            <img src="" alt="">
+            <img id="foto-meme" src="" alt="">
             <div class="textoAbajo">
-                <h3>BOTTOM TEXT</h3>
+                <p>BOTTOM TEXT</p>
             </div>
         </div>
         <button class="botonDescargar"><i class="fas fa-download"></i>Descaragar meme</button>
@@ -45,11 +45,11 @@
     <aside id="asideImagen">
         <div class="titulo">
             <h2>IMAGEN</h2>
-            <button class="botonEscape"><i class="far fa-times-circle"></i></button>
+            <button id="botonEscapeImagen" class="botonEscape"><i class="far fa-times-circle"></i></button>
         </div>
         <div>
             <h3>URL</h3>
-            <input type="text">
+            <input id="url-imagen" type="text">
         </div>
         <div>
             <h3>FONDO</h3>
@@ -101,7 +101,7 @@
     <aside id="asideTexto">
         <div class="titulo">
             <h2>TEXTO</h2>
-            <button class="botonEscape"><i class="far fa-times-circle"></i></button>
+            <button class="botonEscape" id="botonEscapeTexto"><i class="far fa-times-circle"></i></button>
         </div>
         <div class="textoInferiorYSuperior">
             <h3>SUPERIOR</h3>
@@ -136,15 +136,15 @@
         </div>
         <div class="colorYFondo">
             <div class="inputsColorYfondo">
-            <div>
-                <h3>COLOR</h3>
-                <label for="" class="inputColor"><input type="color">#000000</label>
+                <div>
+                    <h3>COLOR</h3>
+                    <label for="" class="inputColor"><input type="color">#000000</label>
+                </div>
+                <div>
+                    <h3>FONDO</h3>
+                    <label for="" class="inputColor"><input type="color">#000000</label>
+                </div>
             </div>
-            <div>
-                <h3>FONDO</h3>
-                <label for="" class="inputColor"><input type="color">#000000</label>  
-            </div>
-        </div>
             <label for=""><input type="checkbox">Fondo transparente</label>
         </div>
         <div>
