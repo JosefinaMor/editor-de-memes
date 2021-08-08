@@ -32,12 +32,12 @@
     </header>
     <main>
         <div id="conteiner-meme" class="conteinerMeme">
-            <div class="textoArriba">
-                <p>TOP TEXT</p>
+            <div id="texto-arriba" class="textoArriba">
+                <p id="parrafo-arriba">TOP TEXT</p>
             </div>
             <img id="foto-meme" src="" alt="">
-            <div class="textoAbajo">
-                <p>BOTTOM TEXT</p>
+            <div id="texto-abajo" class="textoAbajo">
+                <p id="parrafo-abajo">BOTTOM TEXT</p>
             </div>
         </div>
         <button class="botonDescargar"><i class="fas fa-download"></i>Descaragar meme</button>
@@ -45,7 +45,7 @@
     <aside id="asideImagen">
         <div class="titulo">
             <h2>IMAGEN</h2>
-            <button id="botonEscapeImagen" class="botonEscape"><i class="far fa-times-circle"></i></button>
+            <button id="botonEscapeImagen" class="botonEquis"><i class="far fa-times-circle"></i></button>
         </div>
         <div>
             <h3>URL</h3>
@@ -101,17 +101,17 @@
     <aside id="asideTexto">
         <div class="titulo">
             <h2>TEXTO</h2>
-            <button class="botonEscape" id="botonEscapeTexto"><i class="far fa-times-circle"></i></button>
+            <button class="botonEquis" id="botonEscapeTexto"><i class="far fa-times-circle"></i></button>
         </div>
         <div class="textoInferiorYSuperior">
             <h3>SUPERIOR</h3>
-            <input type="textarea">
-            <label for=""><input type="checkbox">Sin texto superior</label>
+            <input id="contenido-texto-arriba" type="textarea">
+            <label for=""><input id="desaparecer-texto-arriba" type="checkbox">Sin texto superior</label>
         </div>
         <div class="textoInferiorYSuperior">
             <h3>INFERIOR</h3>
-            <input type="textarea">
-            <label for=""><input type="checkbox">Sin texto inferior</label>
+            <input id="contenido-texto-abajo" type="textarea">
+            <label for=""><input id="desaparecer-texto-abajo" type="checkbox">Sin texto inferior</label>
         </div>
         <div class="fuente">
             <h3>FUENTE</h3>
