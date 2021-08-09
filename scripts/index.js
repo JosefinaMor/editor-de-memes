@@ -18,6 +18,12 @@ const contenidoTextoArriba   = document.getElementById("contenido-texto-arriba")
 const contenidoTextoAbajo    = document.getElementById("contenido-texto-abajo");//input del texto de la parte de abajo
 const parrafoArriba          = document.getElementById("parrafo-arriba");//texto del meme parte de arriba
 const parrafoAbajo           = document.getElementById("parrafo-abajo");//texto del meme parte de abajo
+const tipoDeLetra            = document.getElementById("tipo-de-letra");
+const tamañoLetra            = document.getElementById("tamaño-letra");
+const botonMoverIzquierda    = document.getElementById("boton-izquierda");
+const botonMoverCentro       = document.getElementById("boton-centro");
+const botonMoverDerecha      = document.getElementById("boton-derecha");
+
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
@@ -74,6 +80,33 @@ const cambiarContenidoAabajo = () =>{
     parrafoAbajo.textContent = valor;
 }
 
+const cambiarLetra = () =>{
+    let valor = tipoDeLetra.options[tipoDeLetra.selectedIndex];
+    valor = valor.value;
+    parrafoArriba.style.fontFamily = valor;
+    parrafoAbajo.style.fontFamily  = valor;
+}
+const cambiarTamañoLetra = () =>{
+    const valor = tamañoLetra.value;
+    console.log(valor);
+    parrafoArriba.style.fontSize = valor;
+    parrafoAbajo.style.fontSize  = valor;
+}
+const moverTextoIzquierda = () =>{
+    parrafoArriba.style.textAlign = "start";
+    parrafoAbajo.style.textAlign = "start";
+}
+
+const moverTextoCentro = () =>{
+    parrafoArriba.style.textAlign = "center";
+    parrafoAbajo.style.textAlign = "center";
+}
+
+const moverTextoDerecha = () =>{
+    parrafoArriba.style.textAlign = "end";
+    parrafoAbajo.style.textAlign = "end";
+}
+
 botonModoClaro.onclick    = cambioDeModo;
 botonAsideTexto.onclick   = aparecerAsideTexto;
 botonAsideImagen.onclick  = aparecerAsideImagen;
@@ -81,7 +114,12 @@ botonEscapeTexto.onclick  = salirAsideTexto;
 botonEscapeImagen.onclick = salirAsideImagen;
 urlImagen.onblur               = insertaImagen;
 botonDesaparecerArriba.onclick = desaparecerBloqueTextoArriba;
-botonDesaparecerAbajo.onclick  = desaparecerBloqueTextoAbajo;
+botonDesaparecerAbajo.oninput  = desaparecerBloqueTextoAbajo;//preguntar por que lo selecciona con la barra espaciadora
 contenidoTextoArriba.oninput   = cambiarContenidoArriba;
 contenidoTextoAbajo.oninput    = cambiarContenidoAabajo;
+tipoDeLetra.oninput = cambiarLetra;
+tamañoLetra.onblur = cambiarTamañoLetra;
+botonMoverIzquierda.onclick = moverTextoIzquierda;
+botonMoverCentro.onclick = moverTextoCentro;
+botonMoverDerecha.onclick = moverTextoDerecha;
 
