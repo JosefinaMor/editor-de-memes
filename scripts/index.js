@@ -24,6 +24,10 @@ const botonMoverIzquierda    = document.getElementById("boton-izquierda");
 const botonMoverCentro       = document.getElementById("boton-centro");
 const botonMoverDerecha      = document.getElementById("boton-derecha");
 const inputColorLetra        = document.getElementById("input-color-letra");
+const fondoTextoTransparente = document.getElementById("fondo-transparente");
+const botonSacarContorno     = document.getElementById("sacar-contorno");
+const botonContornoClaro     = document.getElementById("poner-contorno-claro");
+const botonContornoOscuro    = document.getElementById("poner-contorno-oscuro");
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
@@ -72,62 +76,68 @@ const desaparecerBloqueTextoAbajo = () =>{
 
 const cambiarContenidoArriba = () =>{
     const valor = contenidoTextoArriba.value;
-    parrafoArriba.textContent = valor;
+    textoArriba.textContent = valor;
 }
 
 const cambiarContenidoAabajo = () =>{
     const valor = contenidoTextoAbajo.value;
-    parrafoAbajo.textContent = valor;
+    textoAbajo.textContent = valor;
 }
 
 const cambiarLetra = () =>{
     let valor = tipoDeLetra.options[tipoDeLetra.selectedIndex];
     valor = valor.value;
-    parrafoArriba.style.fontFamily = valor;
-    parrafoAbajo.style.fontFamily  = valor;
+    textoArriba.style.fontFamily = valor;
+    textofoAbajo.style.fontFamily  = valor;
 }
 
 const cambiarTamañoLetra = () =>{
     const valor = tamañoLetra.value;
-    parrafoArriba.style.fontSize = valor +"px";
+    textoArriba.style.fontSize = valor +"px";
     textoAbajo.style.fontSize  = valor + "px";
 }
 
 const moverTextoIzquierda = () =>{
-    parrafoArriba.style.textAlign = "start";
-    parrafoAbajo.style.textAlign = "start";
+    textoArriba.style.justifyContent = "start";
+    textoAbajo.style.justifyContent = "start";
 }
 
 const moverTextoCentro = () =>{
-    parrafoArriba.style.textAlign = "center";
-    parrafoAbajo.style.textAlign = "center";
+    textoArriba.style.justifyContent = "center";
+    textoAbajo.style.justifyContent = "center";
 }
 
 const moverTextoDerecha = () =>{
-    parrafoArriba.style.textAlign = "end";
-    parrafoAbajo.style.textAlign = "end";
+    textoArriba.style.justifyContent = "end";
+    textoAbajo.style.justifyContent = "end";
 }
 const cambiarColorLetra = () =>{
-    const valor1 = inputColorLetra.select(inputColorLetra.value);
-console.log(valor1);
-    console.log(valor);
+    const valor1 = inputColorLetra.value;
+console.log("#"+valor1);
+console.log(hola);
     textoArriba.style.color = valor;
     textoAbajo.style.color = valor;
 }
 
-botonModoClaro.onclick    = cambioDeModo;
-botonAsideTexto.onclick   = aparecerAsideTexto;
-botonAsideImagen.onclick  = aparecerAsideImagen;
-botonEscapeTexto.onclick  = salirAsideTexto;
-botonEscapeImagen.onclick = salirAsideImagen;
+const hacerFondoDeTextoTransparente = () =>{
+    textoArriba.classList.toggle("transparente");
+    textoAbajo.classList.toggle("transparente");
+}
+
+botonModoClaro.onclick         = cambioDeModo;
+botonAsideTexto.onclick        = aparecerAsideTexto;
+botonAsideImagen.onclick       = aparecerAsideImagen;
+botonEscapeTexto.onclick       = salirAsideTexto;
+botonEscapeImagen.onclick      = salirAsideImagen;
 urlImagen.onblur               = insertaImagen;
 botonDesaparecerArriba.onclick = desaparecerBloqueTextoArriba;
 botonDesaparecerAbajo.oninput  = desaparecerBloqueTextoAbajo;//preguntar por que lo selecciona con la barra espaciadora
 contenidoTextoArriba.oninput   = cambiarContenidoArriba;
 contenidoTextoAbajo.oninput    = cambiarContenidoAabajo;
-tipoDeLetra.oninput = cambiarLetra;
-tamañoLetra.onblur = cambiarTamañoLetra;
-botonMoverIzquierda.onclick = moverTextoIzquierda;
-botonMoverCentro.onclick = moverTextoCentro;
-botonMoverDerecha.onclick = moverTextoDerecha;
-inputColorLetra.oninput = cambiarColorLetra;
+tipoDeLetra.oninput            = cambiarLetra;
+tamañoLetra.onblur             = cambiarTamañoLetra;
+botonMoverIzquierda.onclick    = moverTextoIzquierda;
+botonMoverCentro.onclick       = moverTextoCentro;
+botonMoverDerecha.onclick      = moverTextoDerecha;
+inputColorLetra.onclose        = cambiarColorLetra;
+fondoTextoTransparente.oninput = hacerFondoDeTextoTransparente;

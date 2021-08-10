@@ -94,6 +94,7 @@ main{
     background-color: #000000;
     position: relative;
     background-image: url();
+    background-blend-mode: unset;
     filter: brightness(100%);
     filter: opacity(100%);
     filter: contrast(0);
@@ -105,9 +106,7 @@ main{
     filter: invert(12%);
 }
 p{
-    margin: 0;
-    text-align: center;
-    font-size: 30px;
+    margin: 0;   
 }
 .texto-arriba{
     width: 100%;
@@ -115,8 +114,11 @@ p{
     font-family: Verdana, sans-serif;
     color: #000000;
     background-color: #ffffff;
-    padding: 20px 0;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
     top: 0;
     z-index: 1;
 }
@@ -128,8 +130,15 @@ p{
     background-color: #ffffff;
     padding: 10px;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
     bottom: 0;
     z-index: 1;
+}
+.transparente{
+    background-color: unset;
 }
 .boton-descargar{
     border: 0;

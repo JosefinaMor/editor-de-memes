@@ -54,13 +54,13 @@
             <h3>FONDO</h3>
             <div>
                 <input type="color">
-                <select name="" id="">
-                    <option value="">Ninguno</option>
-                    <option value="">Aclarar</option>
-                    <option value="">Oscurecer</option>
-                    <option value="">Diferencia</option>
-                    <option value="">Luminosidad</option>
-                    <option value="">Multiplicar</option>
+                <select name="" id="modo-mezcla-fondo-e-imagen">
+                    <option value="unset">Ninguno</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="darken">Oscurecer</option>
+                    <option value="difference">Diferencia</option>
+                    <option value="luminosity">Luminosidad</option>
+                    <option value="multiply">Multiplicar</option>
                 </select>
             </div>
         </div>
@@ -144,14 +144,14 @@
                     <div id="input-color-fondo" class="input-color"><input type="color">#000000</div>
                 </div>
             </div>
-            <label for=""><input type="checkbox">Fondo transparente</label>
+            <label for=""><input id="fondo-transparente" type="checkbox">Fondo transparente</label>
         </div>
         <div>
             <h3>CONTORNO</h3>
             <div>
-                <button class="botones">Ninguno</button>
-                <button class="botones">Claro</button>
-                <button class="botones">Oscuro</button>
+                <button id="sacar-contorno" class="botones">Ninguno</button>
+                <button id="poner-contorno-claro" class="botones">Claro</button>
+                <button id="poner-contorno-oscuro" class="botones">Oscuro</button>
             </div>
         </div>
         <div>
