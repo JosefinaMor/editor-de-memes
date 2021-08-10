@@ -19,33 +19,32 @@
 
 <body>
     <header>
-        <div id="barraNavegacion" class="barraNavegacion">
+        <div id="barra-navegacion" class="barra-navegacion">
             <nav>
                 <h1>Generador de Memes</h1>
-                <ul id="botonesDelNav">
-                    <li><button id="botonAsideImagen"><i class="fas fa-file-image"></i>Imagen</button></li>
-                    <li><button id="botonAsideTexto"><i class="fas fa-font"></i>Texto</button></li>
+                <ul id="botones-del-nav">
+                    <li><button id="boton-aside-imagen"><i class="fas fa-file-image"></i>Imagen</button></li>
+                    <li><button id="boton-aside-texto"><i class="fas fa-font"></i>Texto</button></li>
                     <li><button id="modo-claro"><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <div id="conteiner-meme" class="conteinerMeme">
-            <div id="texto-arriba" class="textoArriba">
-                <p id="parrafo-arriba">TOP TEXT</p>
+        <div id="conteiner-meme" class="conteiner-meme">
+            <div id="texto-arriba" class="texto-arriba">
+                <p id="parrafo-arriba" >TOP TEXT</p>
             </div>
-            <img id="foto-meme" src="" alt="">
-            <div id="texto-abajo" class="textoAbajo">
+            <div id="texto-abajo" class="texto-abajo">
                 <p id="parrafo-abajo">BOTTOM TEXT</p>
             </div>
         </div>
-        <button class="botonDescargar"><i class="fas fa-download"></i>Descaragar meme</button>
+        <button class="boton-descargar"><i class="fas fa-download"></i>Descaragar meme</button>
     </main>
-    <aside id="asideImagen">
+    <aside id="aside-imagen">
         <div class="titulo">
             <h2>IMAGEN</h2>
-            <button id="botonEscapeImagen" class="botonEquis"><i class="far fa-times-circle"></i></button>
+            <button id="boton-escape-imagen" class="boton-equis"><i class="far fa-times-circle"></i></button>
         </div>
         <div>
             <h3>URL</h3>
@@ -98,17 +97,17 @@
             </div>
         </div>
     </aside>
-    <aside id="asideTexto">
+    <aside id="aside-texto">
         <div class="titulo">
             <h2>TEXTO</h2>
-            <button class="botonEquis" id="botonEscapeTexto"><i class="far fa-times-circle"></i></button>
+            <button class="boton-equis" id="boton-escape-texto"><i class="far fa-times-circle"></i></button>
         </div>
-        <div class="textoInferiorYSuperior">
+        <div class="texto-inferior-y-superior">
             <h3>SUPERIOR</h3>
             <input id="contenido-texto-arriba" type="textarea">
             <label for=""><input id="desaparecer-texto-arriba" type="checkbox">Sin texto superior</label>
         </div>
-        <div class="textoInferiorYSuperior">
+        <div class="texto-inferior-y-superior">
             <h3>INFERIOR</h3>
             <input id="contenido-texto-abajo" type="textarea">
             <label for=""><input id="desaparecer-texto-abajo" type="checkbox">Sin texto inferior</label>
@@ -118,7 +117,7 @@
             <div>
                 <select name="" id="tipo-de-letra">
                     <option value="Arial">Arial</option>
-                    <option value="">Arial black</option>
+                    <option value="Arial black">Arial black</option>
                     <option value="American Typeqriter">American Typeqriter</option>
                     <option value="Andale Mono">Andale Mono</option>
                     <option value="Comic Sans Mc">Comic Sans Mc</option>
@@ -131,18 +130,18 @@
                     <button id="boton-izquierda" class="botones"><i class="fas fa-align-left"></i></button>
                     <button id="boton-centro" class="botones"><i class="fas fa-align-center"></i></button>
                     <button id="boton-derecha" class="botones"><i class="fas fa-align-right"></i></button>
-                </div>
+                </div> 
             </div>
         </div>
-        <div class="colorYFondo">
-            <div class="inputsColorYfondo">
+        <div class="color-y-fondo">
+            <div class="inputs-colory-y-fondo">
                 <div>
                     <h3>COLOR</h3>
-                    <div class="inputColor"><input type="color">#000000</div>
+                    <div id="input-color-letra" class="input-color"><input type="color">#000000</div>
                 </div>
                 <div>
                     <h3>FONDO</h3>
-                    <div class="inputColor"><input type="color">#000000</div>
+                    <div id="input-color-fondo" class="input-color"><input type="color">#000000</div>
                 </div>
             </div>
             <label for=""><input type="checkbox">Fondo transparente</label>

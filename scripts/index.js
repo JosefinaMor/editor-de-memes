@@ -1,14 +1,14 @@
 const cambioBody             = document.querySelector("body");
-const botonModoClaro          = document.getElementById("modo-claro");
-const barraNavegacio         = document.getElementById("barraNavegacion");
-const botonesDelNav          = document.getElementById("botonesDelNav");
-const asideImagen            = document.getElementById("asideImagen");
-const asideTexto             = document.getElementById("asideTexto");
-const botonAsideTexto        = document.getElementById("botonAsideTexto");
-const botonAsideImagen       = document.getElementById("botonAsideImagen");
-const botonEscapeTexto       = document.getElementById("botonEscapeTexto");
-const botonEscapeImagen      = document.getElementById("botonEscapeImagen");
-const fotoMeme               = document.getElementById("foto-meme");//imagen del contenedor principal
+const botonModoClaro         = document.getElementById("modo-claro");
+const barraNavegacion        = document.getElementById("barra-navegacion");
+const botonesDelNav          = document.getElementById("botones-del-nav");
+const asideImagen            = document.getElementById("aside-imagen");
+const asideTexto             = document.getElementById("aside-texto");
+const botonAsideTexto        = document.getElementById("boton-aside-texto");
+const botonAsideImagen       = document.getElementById("boton-aside-imagen");
+const botonEscapeTexto       = document.getElementById("boton-escape-texto");
+const botonEscapeImagen      = document.getElementById("boton-escape-imagen");
+const conteinerMeme          = document.getElementById("conteiner-meme");//imagen del contenedor principal
 const urlImagen              = document.getElementById("url-imagen");//input donde se inerta url de la imagen
 const botonDesaparecerArriba = document.getElementById("desaparecer-texto-arriba");//checkbox del input de texto de arriba
 const botonDesaparecerAbajo  = document.getElementById("desaparecer-texto-abajo");//checkbox del input de texto de abajo
@@ -23,11 +23,11 @@ const tamañoLetra            = document.getElementById("tamaño-letra");
 const botonMoverIzquierda    = document.getElementById("boton-izquierda");
 const botonMoverCentro       = document.getElementById("boton-centro");
 const botonMoverDerecha      = document.getElementById("boton-derecha");
-
+const inputColorLetra        = document.getElementById("input-color-letra");
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
-    barraNavegacion.classList.toggle("modoClaroBarraNavegacion");
+    barraNavegacion.classList.toggle("modo-claro-barra-navegacion");
     asideImagen.classList.toggle("modoClaro");
     asideTexto.classList.toggle("modoClaro");
     botonesDelNav.classList.toggle("modoClaroLi");
@@ -35,39 +35,39 @@ const cambioDeModo = () =>{
 
 const insertaImagen = () =>{
     const valor = urlImagen.value;
-    fotoMeme.src = valor;
+    conteinerMeme.style.backgroundImage = "url(" + valor +")";//cambiar por fondo url
 }
 
 const aparecerAsideTexto = () =>{
-    asideTexto.classList.toggle("mostrarAside"); 
-    asideImagen.classList.remove("mostrarAside");
-    botonAsideTexto.classList.toggle("remarcoBoton");
-    botonAsideImagen.classList.remove("remarcoBoton");
+    asideTexto.classList.toggle("mostrar"); 
+    asideImagen.classList.remove("mostrar");
+    botonAsideTexto.classList.toggle("remarco-boton");
+    botonAsideImagen.classList.remove("remarco-boton");
 }
 
 const aparecerAsideImagen = () =>{
-    asideImagen.classList.toggle("mostrarAside"); 
-    asideTexto.classList.remove("mostrarAside");
-    botonAsideImagen.classList.toggle("remarcoBoton");
-    botonAsideTexto.classList.remove("remarcoBoton");
+    asideImagen.classList.toggle("mostrar"); 
+    asideTexto.classList.remove("mostrar");
+    botonAsideImagen.classList.toggle("remarco-boton");
+    botonAsideTexto.classList.remove("remarco-boton");
 }
 
 const salirAsideTexto = () =>{
-    asideTexto.classList.remove("mostrarAside");
-    botonAsideTexto.classList.remove("remarcoBoton");
+    asideTexto.classList.remove("mostrar");
+    botonAsideTexto.classList.remove("remarco-boton");
 }
 
 const salirAsideImagen = () =>{
-    asideImagen.classList.remove("mostrarAside");
-    botonAsideImagen.classList.remove("remarcoBoton");
+    asideImagen.classList.remove("mostrar");
+    botonAsideImagen.classList.remove("remarco-boton");
 }
 
 const desaparecerBloqueTextoArriba = () =>{
-    textoArriba.classList.toggle("displayNone");
+    textoArriba.classList.toggle("desaparecer");
 }
 
 const desaparecerBloqueTextoAbajo = () =>{
-    textoAbajo.classList.toggle("displayNone");
+    textoAbajo.classList.toggle("desaparecer");
 }
 
 const cambiarContenidoArriba = () =>{
@@ -86,12 +86,13 @@ const cambiarLetra = () =>{
     parrafoArriba.style.fontFamily = valor;
     parrafoAbajo.style.fontFamily  = valor;
 }
+
 const cambiarTamañoLetra = () =>{
     const valor = tamañoLetra.value;
-    console.log(valor);
-    parrafoArriba.style.fontSize = valor;
-    parrafoAbajo.style.fontSize  = valor;
+    parrafoArriba.style.fontSize = valor +"px";
+    textoAbajo.style.fontSize  = valor + "px";
 }
+
 const moverTextoIzquierda = () =>{
     parrafoArriba.style.textAlign = "start";
     parrafoAbajo.style.textAlign = "start";
@@ -105,6 +106,13 @@ const moverTextoCentro = () =>{
 const moverTextoDerecha = () =>{
     parrafoArriba.style.textAlign = "end";
     parrafoAbajo.style.textAlign = "end";
+}
+const cambiarColorLetra = () =>{
+    const valor1 = inputColorLetra.select(inputColorLetra.value);
+console.log(valor1);
+    console.log(valor);
+    textoArriba.style.color = valor;
+    textoAbajo.style.color = valor;
 }
 
 botonModoClaro.onclick    = cambioDeModo;
@@ -122,4 +130,4 @@ tamañoLetra.onblur = cambiarTamañoLetra;
 botonMoverIzquierda.onclick = moverTextoIzquierda;
 botonMoverCentro.onclick = moverTextoCentro;
 botonMoverDerecha.onclick = moverTextoDerecha;
-
+inputColorLetra.oninput = cambiarColorLetra;
