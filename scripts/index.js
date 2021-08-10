@@ -16,8 +16,6 @@ const textoArriba            = document.getElementById("texto-arriba");//bloque 
 const textoAbajo             = document.getElementById("texto-abajo");//bloque de texto del meme (abajo)
 const contenidoTextoArriba   = document.getElementById("contenido-texto-arriba");//input del texto de la parte de arriba
 const contenidoTextoAbajo    = document.getElementById("contenido-texto-abajo");//input del texto de la parte de abajo
-const parrafoArriba          = document.getElementById("parrafo-arriba");//texto del meme parte de arriba
-const parrafoAbajo           = document.getElementById("parrafo-abajo");//texto del meme parte de abajo
 const tipoDeLetra            = document.getElementById("tipo-de-letra");
 const tamañoLetra            = document.getElementById("tamaño-letra");
 const botonMoverIzquierda    = document.getElementById("boton-izquierda");
@@ -124,6 +122,21 @@ const hacerFondoDeTextoTransparente = () =>{
     textoAbajo.classList.toggle("transparente");
 }
 
+const sacarContornoDeLetras = () =>{
+    textoArriba.style.textShadow = "1px 1px transparent";
+    textoAbajo.style.textShadow = "1px 1px transparent";
+}
+
+const ponerContornoClaro = () =>{
+    textoArriba.style.textShadow = "1px 1px #ffffff, 1px -1px #ffffff, -1px 1px #ffffff, -1px -1px #ffffff";
+    textoAbajo.style.textShadow = "1px 1px #ffffff, 1px -1px #ffffff, -1px 1px #ffffff, -1px -1px #ffffff";
+}
+
+const ponerContornoOscuro = () =>{
+    textoArriba.style.textShadow = "1px 1px #000000, 1px -1px #000000, -1px 1px #000000, -1px -1px #000000";
+    textoAbajo.style.textShadow = "1px 1px #000000, 1px -1px #000000, -1px 1px #000000, -1px -1px #000000";
+}
+
 botonModoClaro.onclick         = cambioDeModo;
 botonAsideTexto.onclick        = aparecerAsideTexto;
 botonAsideImagen.onclick       = aparecerAsideImagen;
@@ -141,3 +154,6 @@ botonMoverCentro.onclick       = moverTextoCentro;
 botonMoverDerecha.onclick      = moverTextoDerecha;
 inputColorLetra.onclose        = cambiarColorLetra;
 fondoTextoTransparente.oninput = hacerFondoDeTextoTransparente;
+botonSacarContorno.onclick     = sacarContornoDeLetras;
+botonContornoClaro.onclick     = ponerContornoClaro;
+botonContornoOscuro.onclick    = ponerContornoOscuro;
