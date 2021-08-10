@@ -22,6 +22,7 @@ const botonMoverIzquierda    = document.getElementById("boton-izquierda");
 const botonMoverCentro       = document.getElementById("boton-centro");
 const botonMoverDerecha      = document.getElementById("boton-derecha");
 const inputColorLetra        = document.getElementById("input-color-letra");
+const inputColorFondoTexto   = document.getElementById("input-color-fondo");
 const fondoTextoTransparente = document.getElementById("fondo-transparente");
 const botonSacarContorno     = document.getElementById("sacar-contorno");
 const botonContornoClaro     = document.getElementById("poner-contorno-claro");
@@ -110,11 +111,15 @@ const moverTextoDerecha = () =>{
     textoAbajo.style.justifyContent = "end";
 }
 const cambiarColorLetra = () =>{
-    const valor1 = inputColorLetra.value;
-console.log("#"+valor1);
-console.log(hola);
+    const valor = inputColorLetra.value;
     textoArriba.style.color = valor;
     textoAbajo.style.color = valor;
+}
+
+const cambiarColorFondoTexto = () =>{
+    const valor = inputColorFondoTexto.value;
+    textoArriba.style.backgroundColor = valor;
+    textoAbajo.style.backgroundColor = valor;
 }
 
 const hacerFondoDeTextoTransparente = () =>{
@@ -152,7 +157,8 @@ tamañoLetra.onblur             = cambiarTamañoLetra;
 botonMoverIzquierda.onclick    = moverTextoIzquierda;
 botonMoverCentro.onclick       = moverTextoCentro;
 botonMoverDerecha.onclick      = moverTextoDerecha;
-inputColorLetra.onclose        = cambiarColorLetra;
+inputColorLetra.oninput        = cambiarColorLetra;
+inputColorFondoTexto.oninput   = cambiarColorFondoTexto;
 fondoTextoTransparente.oninput = hacerFondoDeTextoTransparente;
 botonSacarContorno.onclick     = sacarContornoDeLetras;
 botonContornoClaro.onclick     = ponerContornoClaro;
