@@ -18,9 +18,8 @@
 </head>
 
 <body>
-    <header>
+    <header id="barra-navegacion" class="barra-navegacion">
         <!-- barra de navegacion de la parte superior  -->
-        <div id="barra-navegacion" class="barra-navegacion">
             <nav>
                 <h1>Generador de Memes</h1>
                 <ul id="botones-del-nav">
@@ -32,7 +31,6 @@
                     <li><button id="modo-claro"><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
                 </ul>
             </nav>
-        </div>
     </header>
     <main>
         <!-- div que va a ser modificado que seria el meme completo -->
@@ -82,31 +80,31 @@
             <div class="filtros">
                 <!-- tipos de filtros  -->
                 <label for="">BRILLO</label>
-                <input type="range">
+                <input id="rango-brillo" type="range" value="1" min="0" max="1" step="0.1">
 
                 <label for="">OPACIDAD</label>
-                <input type="range">
+                <input id="rango-opacidad" type="range" value="1" min="0" max="1" step="0.1">
 
                 <label for="">CONTRASTE</label>
-                <input type="range">
+                <input id="rango-contraste" type="range" value="100" min="100" max="10000" step="1">
 
                 <label for="">DESENFOQUE</label>
-                <input type="range">
+                <input id="rango-desenfoque" type="range" value="1" min="0" max="10" step="0.1">
 
                 <label for="">ESCALA DE GRISES</label>
-                <input type="range">
+                <input id="rango-grises" type="range" value="1" min="0" max="1" step="0.1">
 
                 <label for="">SEPIA</label>
-                <input type="range">
+                <input id="rango-sepia" type="range" value="0" min="0" max="100" step="1">
 
                 <label for="">HUE</label>
-                <input type="range">
+                <input id="rango-hue" type="range" value="0" min="0" max="359" step="1">
 
                 <label for="">SATURADO</label>
-                <input type="range">
+                <input id="rango-saturado" type="range" value="100" min="100" max="1000" step="10">
 
                 <label for="">NEGATIVO</label>
-                <input type="range">
+                <input id="rango-negativo" type="range" value="0" min="0" max="1" step="0.1">
 
             </div>
         </div>
@@ -160,12 +158,12 @@
                 <div>
                     <!-- color letra -->
                     <h3>COLOR</h3>
-                    <div class="input-color"><input id="input-color-letra" type="color">#000000</div>
+                    <div class="input-color"><input value="#000000" id="input-color-letra" type="color">#000000</div>
                 </div>
                 <div>
                     <!-- color fondo del div del texto -->
                     <h3>FONDO</h3>
-                    <div class="input-color"><input id="input-color-fondo" type="color">#000000</div>
+                    <div class="input-color"><input value="#ffffff" id="input-color-fondo" type="color">#000000</div>
                 </div>
             </div>
             <label for=""><input id="fondo-transparente" type="checkbox">Fondo transparente</label>

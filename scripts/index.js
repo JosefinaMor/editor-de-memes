@@ -37,6 +37,12 @@ const cambioDeModo = () =>{
     asideImagen.classList.toggle("modoClaro");
     asideTexto.classList.toggle("modoClaro");
     botonesDelNav.classList.toggle("modoClaroLi");
+    if(cambioBody.classList == "modoClaro"){
+        botonModoClaro.innerHTML = '<i class="far fa-lightbulb"></i>Modo claro</button>';
+    }else{
+        botonModoClaro.innerHTML = '<i class="far fa-lightbulb"></i>Modo oscuro</button>';
+    }
+    
 }
 
 const insertaImagen = () =>{
@@ -126,8 +132,14 @@ const cambiarColorFondoTexto = () =>{
 }
 
 const hacerFondoDeTextoTransparente = () =>{
-    textoArriba.classList.toggle("transparente");
-    textoAbajo.classList.toggle("transparente");
+    const valor = inputColorFondoTexto.value;
+    if(textoArriba.style.backgroundColor == "transparent"){
+        textoArriba.style.backgroundColor = valor;
+        textoAbajo.style.backgroundColor = valor;
+    }else{
+        textoArriba.style.backgroundColor = "transparent";
+        textoAbajo.style.backgroundColor = "transparent"; 
+    }
 }
 
 const sacarContornoDeLetras = () =>{
@@ -155,6 +167,14 @@ const elegirTipoDeBlend = () =>{
     valor = valor.value;
     conteinerMeme.style.blend = valor;
 }
+
+const rango = document.getElementById("rango-desenfoque");
+const ola = () =>{
+    const valor = rango.value;
+console.log(valor);
+}
+
+rango.onchange = ola;
 
 botonModoClaro.onclick         = cambioDeModo;
 botonAsideTexto.onclick        = aparecerAsideTexto;
