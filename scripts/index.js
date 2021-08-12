@@ -27,6 +27,9 @@ const fondoTextoTransparente = document.getElementById("fondo-transparente");
 const botonSacarContorno     = document.getElementById("sacar-contorno");
 const botonContornoClaro     = document.getElementById("poner-contorno-claro");
 const botonContornoOscuro    = document.getElementById("poner-contorno-oscuro");
+const inputColorParaBlend    = document.getElementById("input-color-para-blend");
+const modoBlendFondoEImagen  = document.getElementById("modo-blend-fondo-e-imagen");
+const colorFondoMeme         = document.getElementById("fondo-meme");
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
@@ -87,7 +90,7 @@ const cambiarLetra = () =>{
     let valor = tipoDeLetra.options[tipoDeLetra.selectedIndex];
     valor = valor.value;
     textoArriba.style.fontFamily = valor;
-    textofoAbajo.style.fontFamily  = valor;
+    textoAbajo.style.fontFamily  = valor;
 }
 
 const cambiarTamañoLetra = () =>{
@@ -142,6 +145,17 @@ const ponerContornoOscuro = () =>{
     textoAbajo.style.textShadow = "1px 1px #000000, 1px -1px #000000, -1px 1px #000000, -1px -1px #000000";
 }
 
+const elegirColorParaBlend = () =>{
+    const valor = inputColorParaBlend.value;
+    colorFondoMeme.style.backgroundColor = valor;
+}
+
+const elegirTipoDeBlend = () =>{
+    let valor = modoBlendFondoEImagen.options[modoBlendFondoEImagen.selectedIndex];
+    valor = valor.value;
+    conteinerMeme.style.blend = valor;
+}
+
 botonModoClaro.onclick         = cambioDeModo;
 botonAsideTexto.onclick        = aparecerAsideTexto;
 botonAsideImagen.onclick       = aparecerAsideImagen;
@@ -163,3 +177,5 @@ fondoTextoTransparente.oninput = hacerFondoDeTextoTransparente;
 botonSacarContorno.onclick     = sacarContornoDeLetras;
 botonContornoClaro.onclick     = ponerContornoClaro;
 botonContornoOscuro.onclick    = ponerContornoOscuro;
+inputColorParaBlend.oninput    = elegirColorParaBlend;
+modoBlendFondoEImagen.oninput  = elegirTipoDeBlend;

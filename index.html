@@ -19,42 +19,55 @@
 
 <body>
     <header>
+        <!-- barra de navegacion de la parte superior  -->
         <div id="barra-navegacion" class="barra-navegacion">
             <nav>
                 <h1>Generador de Memes</h1>
                 <ul id="botones-del-nav">
+                    <!-- boton para aparecer y desaparecer el aside de imagen -->
                     <li><button id="boton-aside-imagen"><i class="fas fa-file-image"></i>Imagen</button></li>
+                    <!-- boton para aparecer y desaparecer el aside de texto -->
                     <li><button id="boton-aside-texto"><i class="fas fa-font"></i>Texto</button></li>
+                    <!-- boton para cambiar de modo oscuro al modo claro y viceversa -->
                     <li><button id="modo-claro"><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <div id="conteiner-meme" class="conteiner-meme">
-            <div id="texto-arriba" class="texto-arriba">
-                <p id="parrafo-arriba" >TOP TEXT</p>
+        <!-- div que va a ser modificado que seria el meme completo -->
+        <article id="fondo-meme" class="fondo-meme">
+            <div id="conteiner-meme" class="conteiner-meme">
+                <!-- en este div se agrega la imagen del meme que abarca todo el div  -->
+                <div id="texto-arriba" class="texto-arriba">
+                    <p id="parrafo-arriba">TOP TEXT</p>
+                </div>
+                <div id="texto-abajo" class="texto-abajo">
+                    <p id="parrafo-abajo">BOTTOM TEXT</p>
+                </div>
             </div>
-            <div id="texto-abajo" class="texto-abajo">
-                <p id="parrafo-abajo">BOTTOM TEXT</p>
-            </div>
-        </div>
+        </article>
         <button class="boton-descargar"><i class="fas fa-download"></i>Descaragar meme</button>
     </main>
+    <!-- parte lateral que emerge al tocar el boton del nav que dice IMAGEN -->
     <aside id="aside-imagen">
         <div class="titulo">
             <h2>IMAGEN</h2>
+            <!-- boton de equis para salir de aside -->
             <button id="boton-escape-imagen" class="boton-equis"><i class="far fa-times-circle"></i></button>
         </div>
         <div>
             <h3>URL</h3>
+            <!-- input en donde se ingresa el url de la imagen -->
             <input id="url-imagen" type="text">
         </div>
         <div>
             <h3>FONDO</h3>
             <div>
+                <!-- tipo de color de fondo del div para hacer blend con la imagen -->
                 <input id="input-color-para-blend" type="color">
-                <select name="" id="modo-mezcla-fondo-e-imagen">
+                <!-- tipos de blend para imagen -->
+                <select name="" id="modo-blend-fondo-e-imagen">
                     <option value="unset">Ninguno</option>
                     <option value="lighten">Aclarar</option>
                     <option value="darken">Oscurecer</option>
@@ -67,6 +80,7 @@
         <div>
             <h3>FILTROS</h3>
             <div class="filtros">
+                <!-- tipos de filtros  -->
                 <label for="">BRILLO</label>
                 <input type="range">
 
@@ -97,17 +111,21 @@
             </div>
         </div>
     </aside>
+    <!-- parte lateral que emerge al tocar el boton del nav que dice IMAGEN -->
     <aside id="aside-texto">
         <div class="titulo">
             <h2>TEXTO</h2>
+            <!-- boton de equis para salir de aside -->
             <button class="boton-equis" id="boton-escape-texto"><i class="far fa-times-circle"></i></button>
         </div>
         <div class="texto-inferior-y-superior">
+            <!-- parte de ingresar contenido al div con texto superior -->
             <h3>SUPERIOR</h3>
             <input id="contenido-texto-arriba" type="textarea">
             <label for=""><input id="desaparecer-texto-arriba" type="checkbox">Sin texto superior</label>
         </div>
         <div class="texto-inferior-y-superior">
+            <!-- parte de ingresar contenido al div con texto inferior -->
             <h3>INFERIOR</h3>
             <input id="contenido-texto-abajo" type="textarea">
             <label for=""><input id="desaparecer-texto-abajo" type="checkbox">Sin texto inferior</label>
@@ -115,6 +133,7 @@
         <div class="fuente">
             <h3>FUENTE</h3>
             <div>
+                <!-- tipos de letras para el texto del meme -->
                 <select name="" id="tipo-de-letra">
                     <option value="Arial">Arial</option>
                     <option value="Arial black">Arial black</option>
@@ -126,38 +145,49 @@
                     <option value="Verdana">Verdana</option>
                 </select>
                 <div>
+                    <!-- tamaño del texto -->
                     <input id="tamaño-letra" type="number">
+                    <!-- botones de redireccion del texto -->
                     <button id="boton-izquierda" class="botones"><i class="fas fa-align-left"></i></button>
                     <button id="boton-centro" class="botones"><i class="fas fa-align-center"></i></button>
                     <button id="boton-derecha" class="botones"><i class="fas fa-align-right"></i></button>
-                </div> 
+                </div>
             </div>
         </div>
+        <!-- inputs de elegir color de texto y fondo en los recuadros de arriba y abajo del meme -->
         <div class="color-y-fondo">
             <div class="inputs-colory-y-fondo">
                 <div>
+                    <!-- color letra -->
                     <h3>COLOR</h3>
                     <div class="input-color"><input id="input-color-letra" type="color">#000000</div>
                 </div>
                 <div>
+                    <!-- color fondo del div del texto -->
                     <h3>FONDO</h3>
                     <div class="input-color"><input id="input-color-fondo" type="color">#000000</div>
                 </div>
             </div>
             <label for=""><input id="fondo-transparente" type="checkbox">Fondo transparente</label>
         </div>
+        <!-- botones de elegir el contorno -->
         <div>
             <h3>CONTORNO</h3>
             <div>
+                <!-- ningun contorno -->
                 <button id="sacar-contorno" class="botones">Ninguno</button>
+                <!-- contorno claro -->
                 <button id="poner-contorno-claro" class="botones">Claro</button>
+                <!-- contorno oscuro -->
                 <button id="poner-contorno-oscuro" class="botones">Oscuro</button>
             </div>
         </div>
+        <!-- tamaño de espaciado -->
         <div>
             <h3>ESPACIADO</h3>
             <input type="number">
         </div>
+        <!-- tipos de interlineados -->
         <div>
             <h3>INTERLINEADO</h3>
             <select name="" id="">

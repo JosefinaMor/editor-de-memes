@@ -82,16 +82,18 @@ main{
     justify-content: center;
     align-items: center;
 }
-.conteiner-meme{
-    border: 1px solid #ffffff;
+.fondo-meme{
+    background-color: #000000;
     margin-top: 130px;
+}
+.conteiner-meme{
     width: 600px;
     height: 600px;
+    background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
     position: relative;
     background-image: url();
     background-blend-mode: unset;
