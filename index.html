@@ -20,29 +20,29 @@
 <body>
     <header id="barra-navegacion" class="barra-navegacion">
         <!-- barra de navegacion de la parte superior  -->
-            <nav>
-                <h1>Generador de Memes</h1>
-                <ul id="botones-del-nav">
-                    <!-- boton para aparecer y desaparecer el aside de imagen -->
-                    <li><button id="boton-aside-imagen"><i class="fas fa-file-image"></i>Imagen</button></li>
-                    <!-- boton para aparecer y desaparecer el aside de texto -->
-                    <li><button id="boton-aside-texto"><i class="fas fa-font"></i>Texto</button></li>
-                    <!-- boton para cambiar de modo oscuro al modo claro y viceversa -->
-                    <li><button id="modo-claro"><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
-                </ul>
-            </nav>
+        <nav>
+            <h1>Generador de Memes</h1>
+            <ul id="botones-del-nav">
+                <!-- boton para aparecer y desaparecer el aside de imagen -->
+                <li><button id="boton-aside-imagen"><i class="fas fa-file-image"></i>Imagen</button></li>
+                <!-- boton para aparecer y desaparecer el aside de texto -->
+                <li><button id="boton-aside-texto"><i class="fas fa-font"></i>Texto</button></li>
+                <!-- boton para cambiar de modo oscuro al modo claro y viceversa -->
+                <li><button id="modo-claro"><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <!-- div que va a ser modificado que seria el meme completo -->
         <article id="fondo-meme" class="fondo-meme">
+            <div id="texto-arriba" class="texto-arriba">
+                <p id="parrafo-arriba">TOP TEXT</p>
+            </div>
+            <div id="texto-abajo" class="texto-abajo">
+                <p id="parrafo-abajo">BOTTOM TEXT</p>
+            </div>
             <div id="conteiner-meme" class="conteiner-meme">
                 <!-- en este div se agrega la imagen del meme que abarca todo el div  -->
-                <div id="texto-arriba" class="texto-arriba">
-                    <p id="parrafo-arriba">TOP TEXT</p>
-                </div>
-                <div id="texto-abajo" class="texto-abajo">
-                    <p id="parrafo-abajo">BOTTOM TEXT</p>
-                </div>
             </div>
         </article>
         <button class="boton-descargar"><i class="fas fa-download"></i>Descaragar meme</button>

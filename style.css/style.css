@@ -86,6 +86,7 @@ main{
 .fondo-meme{
     background-color: #000000;
     margin-top: 130px;
+    position: relative;
 }
 .conteiner-meme{
     width: 600px;
@@ -95,17 +96,7 @@ main{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    background-image: url();
     background-blend-mode: unset;
-    filter: brightness(100%);
-    filter: opacity(100%);
-    filter: contrast(0);
-    filter: grayscale(2);
-    filter: sepia(0);
-    filter: hue-rotate(100%);
-    filter: saturate(0);
-    filter: invert(12%);
     z-index: 0;
 }
 p{
@@ -118,11 +109,11 @@ p{
     color: #000000;
     background-color: #ffffff;
     position: absolute;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    top: 0;
     z-index: 1;
 }
 .texto-abajo{
@@ -140,9 +131,6 @@ p{
     font-size: 30px;
     bottom: 0;
     z-index: 1;
-}
-.transparente{
-    background-color: unset;
 }
 .boton-descargar{
     border: 0;

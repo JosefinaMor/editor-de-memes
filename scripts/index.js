@@ -170,7 +170,7 @@ const elegirTipoDeBlend = () =>{
 }
 
 const rango = document.getElementById("rango-desenfoque");
-const fondo = document.getElementById("fondo-meme");
+const fondo = document.getElementById("conteiner-meme");
 const ola = () =>{
     const valor = rango.value;
     fondo.style.filter = "blur(" + valor + "px)";
