@@ -30,6 +30,8 @@ const botonContornoOscuro    = document.getElementById("poner-contorno-oscuro");
 const inputColorParaBlend    = document.getElementById("input-color-para-blend");
 const modoBlendFondoEImagen  = document.getElementById("modo-blend-fondo-e-imagen");
 const colorFondoMeme         = document.getElementById("fondo-meme");
+const inputRangoBrillo       = document.getElementById("rango-brillo");
+const inputRangoOpacidad     = document.getElementById("rango-opacidad");
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
@@ -41,8 +43,7 @@ const cambioDeModo = () =>{
         botonModoClaro.innerHTML = '<i class="far fa-lightbulb"></i>Modo claro</button>';
     }else{
         botonModoClaro.innerHTML = '<i class="far fa-lightbulb"></i>Modo oscuro</button>';
-    }
-    
+    }   
 }
 
 const insertaImagen = () =>{
@@ -169,9 +170,10 @@ const elegirTipoDeBlend = () =>{
 }
 
 const rango = document.getElementById("rango-desenfoque");
+const fondo = document.getElementById("fondo-meme");
 const ola = () =>{
     const valor = rango.value;
-console.log(valor);
+    fondo.style.filter = "blur(" + valor + "px)";
 }
 
 rango.onchange = ola;
