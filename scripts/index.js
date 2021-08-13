@@ -234,6 +234,10 @@ const graduacionDeFiltroNegativo = () =>{
 const resetearFiltros = () =>{
     conteinerMeme.style.filter = "brightness(1), opacity(1), contrast(100%), blur(0px), grayscale(0%), sepia(0%), hue-rotation(0deg), saturation(0%), invert(0)";
     
+    inputRangoSepia.value = 0;
+    inputRangoHue.value = 0;
+    inputRangoSaturado.value = 100;
+    inputRangoNegativo.value = 0;
     console.log("hola");
 }
 
