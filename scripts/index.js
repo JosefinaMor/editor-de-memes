@@ -40,6 +40,7 @@ const inputRangoHue          = document.getElementById("rango-hue");
 const inputRangoSaturado     = document.getElementById("rango-saturado");
 const inputRangoNegativo     = document.getElementById("rango-negativo");
 const botonReseteoFiltros    = document.getElementById("boton-reseteo-filtros");
+const inputEspaciado         = document.getElementById("input-espaciado");
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
@@ -180,55 +181,46 @@ const elegirTipoDeBlend = () =>{
 const graduacionDeFiltroBrillo = () =>{
     const valor = inputRangoBrillo.value;
     conteinerMeme.style.filter = "brightness(" + valor + ")";
-    console.log("hola");
 }
 
 const graduacionDeFiltroOpacidad = () =>{
     const valor = inputRangoOpacidad.value;
     conteinerMeme.style.filter = "opacity(" + valor + ")";
-    console.log("hola");
 }
 
 const graduacionDeFiltroContraste = () =>{
     const valor = inputRangoContraste.value;
     conteinerMeme.style.filter = "contrast(" + valor + "%)";
-    console.log("hola");
 }
 
 const graduacionDeFiltroDesenfoque = () =>{
     const valor = inputRangoDesenfoque.value;
     conteinerMeme.style.filter = "blur(" + valor + "px)";
-    console.log("hola");
 }
 
 const graduacionDeFiltroGrises = () =>{
     const valor = inputRangoGrises.value;
     conteinerMeme.style.filter = "grayscale(" + valor + "%)";
-    console.log("hola");
 }
 
 const graduacionDeFiltroSepia = () =>{
     const valor = inputRangoSepia.value;
     conteinerMeme.style.filter = "sepia(" + valor + "%)";
-    console.log("hola");
 }
 
 const graduacionDeFiltroHue = () =>{
     const valor = inputRangoHue.value;
     conteinerMeme.style.filter = "hue-rotation(" + valor + "deg)";
-    console.log("hola");
 }
 
 const graduacionDeFiltroSaturado = () =>{
     const valor = inputRangoSaturado.value;
     conteinerMeme.style.filter = "saturation(" + valor + "%)";
-    console.log("hola");
 }
 
 const graduacionDeFiltroNegativo = () =>{
     const valor = inputRangoNegativo.value;
     conteinerMeme.style.filter = "invert(" + valor + ")";
-    console.log("hola");
 }
 
 const resetearFiltros = () =>{
@@ -242,6 +234,12 @@ const resetearFiltros = () =>{
     inputRangoHue.value        = 0;
     inputRangoSaturado.value   = 100;
     inputRangoNegativo.value   = 0;
+}
+
+const cambiarTamañoEspaciado = () =>{
+    const valor = inputEspaciado.value;
+    textoArriba.style.padding = valor + "px 50px";
+    textoAbajo.style.padding = valor + "px 50px"; 
 }
 
 botonModoClaro.onclick         = cambioDeModo;
@@ -277,3 +275,4 @@ inputRangoHue.oninput          = graduacionDeFiltroHue;
 inputRangoSaturado.oninput     = graduacionDeFiltroSaturado;
 inputRangoNegativo.oninput     = graduacionDeFiltroNegativo;
 botonReseteoFiltros.onclick    = resetearFiltros;
+inputEspaciado.oninput         = cambiarTamañoEspaciado;
