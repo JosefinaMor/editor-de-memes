@@ -32,6 +32,13 @@ const modoBlendFondoEImagen  = document.getElementById("modo-blend-fondo-e-image
 const colorFondoMeme         = document.getElementById("fondo-meme");
 const inputRangoBrillo       = document.getElementById("rango-brillo");
 const inputRangoOpacidad     = document.getElementById("rango-opacidad");
+const inputRangoContraste    = document.getElementById("rango-constraste");
+const inputRangoDesenfoque   = document.getElementById("rango-desenfoque");
+const inputRangoGrises       = document.getElementById("rango-grises");
+const inputRangoSepia        = document.getElementById("rango-sepia");
+const inputRangoHue          = document.getElementById("rango-hue");
+const inputRangoSaturado     = document.getElementById("rango-saturado");
+const inputRangoNegativo     = document.getElementById("rango-negativo");
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
@@ -169,12 +176,11 @@ const elegirTipoDeBlend = () =>{
     conteinerMeme.style.blend = valor;
 }
 
-const rango = document.getElementById("rango-desenfoque");
-const fondo = document.getElementById("conteiner-meme");
-const ola = () =>{
-    const valor = rango.value;
-    fondo.style.filter = "blur(" + valor + "px)";
+const graduacionDeFiltroBrillo = () =>{
+    const valor = inputRangoBrillo.value;
+    conteinerMeme.style.filter = "brightness(" + valor + ")";
 }
+
 
 rango.onchange = ola;
 
