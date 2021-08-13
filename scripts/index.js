@@ -41,6 +41,7 @@ const inputRangoSaturado     = document.getElementById("rango-saturado");
 const inputRangoNegativo     = document.getElementById("rango-negativo");
 const botonReseteoFiltros    = document.getElementById("boton-reseteo-filtros");
 const inputEspaciado         = document.getElementById("input-espaciado");
+const tipoDeInterlineado     = document.getElementById("tipo-de-interlineado");
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
@@ -242,6 +243,13 @@ const cambiarTamañoEspaciado = () =>{
     textoAbajo.style.padding = valor + "px 50px"; 
 }
 
+const elegirTipoDeInterlineado = () =>{
+    let valor = tipoDeInterlineado.options[tipoDeInterlineado.selectedIndex];
+    valor = valor.value;
+    textoArriba.style.lineHeight = valor;
+    textoAbajo.style.lineHeight = valor; 
+}
+
 botonModoClaro.onclick         = cambioDeModo;
 botonAsideTexto.onclick        = aparecerAsideTexto;
 botonAsideImagen.onclick       = aparecerAsideImagen;
@@ -276,3 +284,4 @@ inputRangoSaturado.oninput     = graduacionDeFiltroSaturado;
 inputRangoNegativo.oninput     = graduacionDeFiltroNegativo;
 botonReseteoFiltros.onclick    = resetearFiltros;
 inputEspaciado.oninput         = cambiarTamañoEspaciado;
+tipoDeInterlineado.oninput     = elegirTipoDeInterlineado;

@@ -106,6 +106,7 @@ main{
     background-color: #ffffff;
     position: absolute;
     top: 0;
+    display: block;
     text-align: center;
     padding: 35px 50px;
     font-size: 40px;
