@@ -181,8 +181,45 @@ const graduacionDeFiltroBrillo = () =>{
     conteinerMeme.style.filter = "brightness(" + valor + ")";
 }
 
+const graduacionDeFiltroOpacidad = () =>{
+    const valor = inputRangoOpacidad.value;
+    conteinerMeme.style.filter = "opacity(" + valor + ")";
+}
 
-rango.onchange = ola;
+const graduacionDeFiltroContraste = () =>{
+    const valor = inputRangoContraste.value;
+    conteinerMeme.style.filter = "contrast(" + valor + "%)";
+}
+
+const graduacionDeFiltroDesenfoque = () =>{
+    const valor = inputRangoDesenfoque.value;
+    conteinerMeme.style.filter = "blur(" + valor + "px)";
+}
+
+const graduacionDeFiltroGrises = () =>{
+    const valor = inputRangoGrises.value;
+    conteinerMeme.style.filter = "grayscale(" + valor + "%)";
+}
+
+const graduacionDeFiltroSepia = () =>{
+    const valor = inputRangoSepia.value;
+    conteinerMeme.style.filter = "sepia(" + valor + "%)";
+}
+
+const graduacionDeFiltroHue = () =>{
+    const valor = inputRangoHue.value;
+    conteinerMeme.style.filter = "hue-rotation(" + valor + "deg)";
+}
+
+const graduacionDeFiltroSaturado = () =>{
+    const valor = inputRangoSaturado.value;
+    conteinerMeme.style.filter = "saturation(" + valor + "%)";
+}
+
+const graduacionDeFiltroNegativo = () =>{
+    const valor = inputRangoNegativo.value;
+    conteinerMeme.style.filter = "invert(" + valor + ")";
+}
 
 botonModoClaro.onclick         = cambioDeModo;
 botonAsideTexto.onclick        = aparecerAsideTexto;
@@ -207,3 +244,12 @@ botonContornoClaro.onclick     = ponerContornoClaro;
 botonContornoOscuro.onclick    = ponerContornoOscuro;
 inputColorParaBlend.oninput    = elegirColorParaBlend;
 modoBlendFondoEImagen.oninput  = elegirTipoDeBlend;
+inputRangoBrillo.oninput       = graduacionDeFiltroBrillo;
+inputRangoOpacidad.oninput     = graduacionDeFiltroOpacidad;
+inputRangoContraste.oninput    = graduacionDeFiltroContraste;
+inputRangoDesenfoque.oninput   = graduacionDeFiltroDesenfoque;
+inputRangoGrises.oninput       = graduacionDeFiltroGrises;
+inputRangoSepia.oninput        = graduacionDeFiltroSepia;
+inputRangoHue.oninput          = graduacionDeFiltroHue;
+inputRangoSaturado.oninput     = graduacionDeFiltroSaturado;
+inputRangoNegativo.oninput     = graduacionDeFiltroNegativo;
