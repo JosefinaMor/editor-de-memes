@@ -81,7 +81,6 @@ button i {
     margin-right: 5px;
 }
 main{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,10 +154,10 @@ aside{
     z-index: 2;
 }
 aside div{
-margin: 10px 0;
+    margin: 10px 0 0 0;
 }
 aside h3{
-    margin: 0;
+    margin: 5px 0 ;
 }
 .titulo{
     width: 100%;
@@ -182,6 +181,7 @@ aside h3{
 .opciones-fondo{
     display: flex;
     justify-content: space-evenly;
+    align-items: flex-start;
 }
 .input-texto{
     width: 250px;
@@ -215,7 +215,7 @@ aside h3{
     outline: none;
 }
 select{
-    margin: 10px 10px 0 0;
+    margin: 10px 0 5px 0;
     width: 45%;
     border-radius: 5px;
     background-color: #1a1221;
@@ -248,8 +248,7 @@ select{
     color: #000000;
     background-color: papayawhip;
 }
-.modoClaro div{
-    color: #000000;
+.modoClaroInput{
     background-color: #ffdab9;
 }
 .texto-inferior-y-superior{
@@ -257,15 +256,17 @@ select{
     flex-direction: column;
     align-items: flex-start;
 }
-.fuente{
+.fuente{ 
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
 }
 .fuente input{
-    width: 100px;
+    margin: 5px 0 10px 0;
+    width: 130px;
 }
-
 .inputs-color-y-fondo{
     width: 250px;
     display: flex;
@@ -273,13 +274,14 @@ select{
     align-items: center;
 }
 .inputs-color-y-fondo div{
-    width: 170px;
+    width: 120px;
 }
 .color-y-fondo{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
+    justify-content: center;
+} 
+
 .botones{
     border: 0;
     border-radius: 5px;
@@ -296,10 +298,22 @@ select{
     border: 1px solid #ffffff;
 }
 .input-color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #1a1221;
+height: 40px;
     border-radius: 5px;
     padding: 15px 5px;
-    margin: 10px 10px 0 0 ;
+    margin: 5px 0;
+}
+.input-color input{
+    border: 1px solid transparent;
+    background-color: #1a1221;
+    padding: 0;
+    width: 20px;
+    border-radius: 50%;
+    outline: none;
 }
 .mostrar{
     display: flex;
@@ -308,8 +322,15 @@ select{
     display: none;
 }
 @media (max-width: 600px) {
+    h1{
+        text-align: center;
+        font-size: 25px;
+    }
     aside{
         width: 100vw;
+    }
+    aside div{
+        width: 100%;
     }
     .titulo h2 {
         text-align: center;
