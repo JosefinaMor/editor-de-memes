@@ -19,7 +19,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 10px 0;
-    position: fixed;
+    position: static;
     z-index: 1;
 }
 nav{
@@ -29,8 +29,7 @@ nav{
     align-items: center;
 }
 h1{
-    font-size: 35px;
-    font-weight: 500;
+    font-size: 40px;
     margin: 10px 0 0 0;
     width: 100%;
 }
@@ -48,6 +47,7 @@ li button{
     outline: none;
     background-color: #1a1221;
     color: #ffffff;
+    border: 1px transparent solid;
     padding: 10px;
     margin: 0 10px;
 }
@@ -57,21 +57,25 @@ li .remarco-boton{
 li button:hover{
     background-color: #3b2a4b;
 }
+li button:focus{
+    background-color: #2e1e3d;
+    border: 1px solid #ffffff;
+}
 
 .modo-claro-barra-navegacion{
     color: #000000;
-    background-color: #e0e0e0;
+    background-color: #ffdab9;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
 .modoClaroLi li button{
     color: #000000;
-    background-color: #e0e0e0;
+    background-color: #ffdab9;
 }
 .modoClaroLi li .remarcoBoton{
     background-color: #b8b8b8;
 }
 .modoClaroLi li button:hover{
-    background-color: #b8b8b8;
+    background-color: whitesmoke;
 }
 button i {
     margin-right: 5px;
@@ -99,32 +103,24 @@ main{
     background-blend-mode: unset;
     z-index: 0;
 }
-.texto-arriba{
+.texto-meme{
     width: 100%;
     font-family: Verdana, sans-serif;
     color: #000000;
     background-color: #ffffff;
-    position: absolute;
-    top: 0;
-    display: block;
     text-align: center;
     padding: 35px 50px;
     font-size: 40px;
     z-index: 1;
     margin: 0; 
 }
-.texto-abajo{
-    width: 100%;
-    font-family: Verdana, sans-serif;
-    color: #000000;
-    background-color: #ffffff;
+.texto-arriba{
     position: absolute;
-    bottom: 0;
-    text-align: center;
-    padding: 35px 50px;
-    font-size: 40px;
-    z-index: 1;
-    margin: 0; 
+    top: 0;
+}
+.texto-abajo{
+    position: absolute;
+    bottom: 0; 
 }
 .boton-descargar{
     border: 0;
@@ -132,13 +128,17 @@ main{
     outline: none;
     background-color: #1a9c25;
     color: #ffffff;
+    border: 1px transparent solid;
     font-size: 15px;
     padding: 10px;
-    margin: 40px 0 0 0 ;
+    margin: 40px 0 ;
 }
-
 .boton-descargar:hover{
     background-color: #13771b;
+}
+.boton-descargar:focus{
+    background-color: #13771b;
+    border: 1px solid #ffffff;
 }
 aside{
     background-color: #3b2a4b;
@@ -147,12 +147,11 @@ aside{
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    height: 100vh;
     width: 300px;
-    padding: 20px;
+    padding: 40px 20px;
     overflow: auto;
     position: absolute;
-    right: 1px;
+    right: 0;
     z-index: 2;
 }
 aside div{
@@ -164,12 +163,15 @@ aside h3{
 .titulo{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .boton-equis{
     border: none;
     outline: none;
-    background-color: #251b2f;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #3b2a4b;
     color: #ffffff;
     align-items: flex-end;
     font-size: 25px;
@@ -177,31 +179,78 @@ aside h3{
 .boton-equis:hover{
     color: #b8b8b8;
 }
-
+.opciones-fondo{
+    display: flex;
+    justify-content: space-evenly;
+}
+.input-texto{
+    width: 250px;
+    margin: 10px 0;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #1a1221;
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    outline: none;
+}
+.opciones-fondo label{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 10px 0 0;
+    width: 45%;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #1a1221;
+    border: 1px solid transparent;
+    padding: 10px;
+    
+}
+.opciones-fondo input{
+    border: 1px solid transparent;
+    background-color: #1a1221;
+    padding: 0;
+    width: 20px;
+    border-radius: 50%;
+    outline: none;
+}
+select{
+    margin: 10px 10px 0 0;
+    width: 45%;
+    border-radius: 5px;
+    background-color: #1a1221;
+    border: 1px solid transparent;
+    color: white;
+    padding: 10px 15px;
+    outline: none;
+}
+.ancho-necesario{
+    width: 250px;
+}
 .filtros{
+    width: 250px;
     height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
 }
-aside{
-    background-color: #251b2f;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100vh;
-    width: 300px;
-    padding: 20px;
-    overflow: auto;
-    position: absolute;
-    right: 1px;
-    z-index: 2;
+.filtros input{
+    width: 100%;
+    border-radius: 5px;
+    background-color: #1a1221;
+    border: 1px solid transparent;
+    color: white;
+    padding: 10px 15px;
+    outline: none;
 }
 .modoClaro{
     color: #000000;
-    background-color: #fafafa;
+    background-color: papayawhip;
+}
+.modoClaro div{
+    color: #000000;
+    background-color: #ffdab9;
 }
 .texto-inferior-y-superior{
     display: flex;
@@ -216,13 +265,19 @@ aside{
 .fuente input{
     width: 100px;
 }
+
+.inputs-color-y-fondo{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inputs-color-y-fondo div{
+    width: 170px;
+}
 .color-y-fondo{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-.inputs-color-y-fondo{
-    display: flex;
     justify-content: space-between;
 }
 .botones{
@@ -232,6 +287,13 @@ aside{
     background-color: #1a1221;
     color: #ffffff;
     padding: 10px;
+}
+.botones:hover{
+    background-color: #2e1e3d;
+}
+.botones:focus{
+    background-color: #2e1e3d;
+    border: 1px solid #ffffff;
 }
 .input-color{
     background-color: #1a1221;
@@ -252,20 +314,18 @@ aside{
     .titulo h2 {
         text-align: center;
     }
-    .conteiner-meme{
+    .fondo-meme{
+        margin-top: 60px;
         width: 90%;
         height: 50vh;
     }
-    p{
-        font-size: 15px;
+    .conteiner-meme{
+        width: 100%;
+        height: 50vh;
     }
-    .texto-arriba{
-        height: 40px;
-        padding: 10px;
-    }
-    .texto-abajo{
-        height: 40px;
-        padding: 10px;
+    .texto-meme{
+        font-size: 25px;
+        padding: 20px 50px;
     }
 
 }

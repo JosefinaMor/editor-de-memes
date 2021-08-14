@@ -35,8 +35,8 @@
     <main>
         <!-- div que va a ser modificado que seria el meme completo -->
         <article id="fondo-meme" class="fondo-meme">
-            <p id="texto-arriba" class="texto-arriba">TOP TEXT</p>
-            <p id="texto-abajo" class="texto-abajo">BOTTOM TEXT</p>
+            <p id="texto-arriba" class="texto-meme texto-arriba">TOP TEXT</p>
+            <p id="texto-abajo" class="texto-meme texto-abajo">BOTTOM TEXT</p>
             <div id="conteiner-meme" class="conteiner-meme">
                 <!-- en este div se agrega la imagen del meme que abarca todo el div  -->
             </div>
@@ -53,13 +53,13 @@
         <div>
             <h3>URL</h3>
             <!-- input en donde se ingresa el url de la imagen -->
-            <input id="url-imagen" type="text">
+            <input id="url-imagen" class="input-texto" type="text">
         </div>
         <div>
             <h3>FONDO</h3>
-            <div>
+            <div class="opciones-fondo">
                 <!-- tipo de color de fondo del div para hacer blend con la imagen -->
-                <input id="input-color-para-blend" type="color">
+                <label for=""><input id="input-color-para-blend" type="color" value="#000000">#000000</label>
                 <!-- tipos de blend para imagen -->
                 <select name="" id="modo-blend-fondo-e-imagen">
                     <option value="unset">Ninguno</option>
@@ -116,20 +116,20 @@
         <div class="texto-inferior-y-superior">
             <!-- parte de ingresar contenido al div con texto superior -->
             <h3>SUPERIOR</h3>
-            <input id="contenido-texto-arriba" type="textarea">
+            <input id="contenido-texto-arriba" type="textarea" class="input-texto">
             <label for=""><input id="desaparecer-texto-arriba" type="checkbox">Sin texto superior</label>
         </div>
         <div class="texto-inferior-y-superior">
             <!-- parte de ingresar contenido al div con texto inferior -->
             <h3>INFERIOR</h3>
-            <input id="contenido-texto-abajo" type="textarea">
+            <input id="contenido-texto-abajo" type="textarea" class="input-texto">
             <label for=""><input id="desaparecer-texto-abajo" type="checkbox">Sin texto inferior</label>
         </div>
         <div class="fuente">
             <h3>FUENTE</h3>
             <div>
                 <!-- tipos de letras para el texto del meme -->
-                <select name="" id="tipo-de-letra">
+                <select name="" id="tipo-de-letra" class="ancho-necesario">
                     <option value="Arial">Arial</option>
                     <option value="Arial black">Arial black</option>
                     <option value="American Typeqriter">American Typeqriter</option>
@@ -141,7 +141,7 @@
                 </select>
                 <div>
                     <!-- tamaño del texto -->
-                    <input id="tamaño-letra" type="number">
+                    <input id="tamaño-letra" type="number" class="input-texto">
                     <!-- botones de redireccion del texto -->
                     <button id="boton-izquierda" class="botones"><i class="fas fa-align-left"></i></button>
                     <button id="boton-centro" class="botones"><i class="fas fa-align-center"></i></button>
@@ -151,7 +151,7 @@
         </div>
         <!-- inputs de elegir color de texto y fondo en los recuadros de arriba y abajo del meme -->
         <div class="color-y-fondo">
-            <div class="inputs-colory-y-fondo">
+            <div id="inputs-colory-y-fondo" class="inputs-color-y-fondo">
                 <div>
                     <!-- color letra -->
                     <h3>COLOR</h3>
@@ -160,7 +160,7 @@
                 <div>
                     <!-- color fondo del div del texto -->
                     <h3>FONDO</h3>
-                    <div class="input-color"><input value="#ffffff" id="input-color-fondo" type="color">#000000</div>
+                    <div class="input-color"><input value="#ffffff" id="input-color-fondo" type="color">#ffffff</div>
                 </div>
             </div>
             <label for=""><input id="fondo-transparente" type="checkbox">Fondo transparente</label>
@@ -180,12 +180,12 @@
         <!-- tamaño de espaciado -->
         <div>
             <h3>ESPACIADO</h3>
-            <input id="input-espaciado" type="number">
+            <input id="input-espaciado" type="number" class="input-texto">
         </div>
         <!-- tipos de interlineados -->
         <div>
             <h3>INTERLINEADO</h3>
-            <select name="" id="tipo-de-interlineado">
+            <select name="" id="tipo-de-interlineado" class="ancho-necesario">
                 <option value="0.8">0.8</option>
                 <option value="1">1</option>
                 <option value="1.2">1.2</option>

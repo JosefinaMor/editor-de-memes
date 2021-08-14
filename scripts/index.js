@@ -42,6 +42,7 @@ const inputRangoNegativo     = document.getElementById("rango-negativo");
 const botonReseteoFiltros    = document.getElementById("boton-reseteo-filtros");
 const inputEspaciado         = document.getElementById("input-espaciado");
 const tipoDeInterlineado     = document.getElementById("tipo-de-interlineado");
+const inputsColoryyfondo     = document.getElementById("inputs-colory-y-fondo");
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
@@ -49,6 +50,9 @@ const cambioDeModo = () =>{
     asideImagen.classList.toggle("modoClaro");
     asideTexto.classList.toggle("modoClaro");
     botonesDelNav.classList.toggle("modoClaroLi");
+    botonEscapeTexto.classList.toggle("modoClaro");
+    inputColorFondoTexto.classList.toggle("modoClaro");
+    colorFondoMeme.classList.toggle("modoClaro");
     if(cambioBody.classList == "modoClaro"){
         botonModoClaro.innerHTML = '<i class="far fa-lightbulb"></i>Modo claro</button>';
     }else{
@@ -117,18 +121,18 @@ const cambiarTamañoLetra = () =>{
 }
 
 const moverTextoIzquierda = () =>{
-    textoArriba.style.justifyContent = "start";
-    textoAbajo.style.justifyContent = "start";
+    textoArriba.style.textAlign = "start";
+    textoAbajo.style.textAlign = "start";
 }
 
 const moverTextoCentro = () =>{
-    textoArriba.style.justifyContent = "center";
-    textoAbajo.style.justifyContent = "center";
+    textoArriba.style.textAlign = "center";
+    textoAbajo.style.textAlign = "center";
 }
 
 const moverTextoDerecha = () =>{
-    textoArriba.style.justifyContent = "end";
-    textoAbajo.style.justifyContent = "end";
+    textoArriba.style.textAlign = "end";
+    textoAbajo.style.textAlign= "end";
 }
 const cambiarColorLetra = () =>{
     const valor = inputColorLetra.value;
