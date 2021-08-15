@@ -41,6 +41,7 @@ ul{
 ul li{
     list-style: none;
 }
+    /* botones del navbar */
 li button{
     border: 0;
     border-radius: 5px;
@@ -64,6 +65,8 @@ li button:focus{
     background-color: #2e1e3d;
     border: 1px solid #ffffff;
 }
+/* barra de navegacion */
+
 /* main */
 main{
     display: flex;
@@ -75,6 +78,7 @@ main{
 .fondo-meme{
     background-color: #000000;
     margin-top: 80px;
+    height: 600px;
     position: relative;
 }
     /* donde se inserta la imagen y se acomodan los divs de texto */
@@ -131,6 +135,7 @@ main{
     border: 1px solid #ffffff;
 }
 /* main */
+
 /* aside */
 aside{
     background-color: #3b2a4b;
@@ -159,6 +164,7 @@ aside h3{
     display: flex;
     justify-content: center;
 }
+    /* boton de escape de aside */
 .boton-equis{
     border: none;
     outline: none;
@@ -190,6 +196,9 @@ aside h3{
     padding: 10px 15px;
     outline: none;
 }
+.input-texto:focus{
+    border: 1px solid #ffffff;
+}
     /* estilos para la section fondo */
 .opciones-fondo{
     display: flex;
@@ -203,6 +212,9 @@ aside h3{
     width: 20px;
     border-radius: 50%;
     outline: none;
+}
+.opciones-fondo input:focus{
+    border: 1px solid #ffffff;
 }
 .opciones-fondo label{
     display: flex;
@@ -228,6 +240,9 @@ select{
     padding: 10px 15px;
     outline: none;
 }
+select:focus{
+    border: 1px solid #ffffff;
+}
     /* section de filtros */
 .filtros{
     width: 250px;
@@ -246,6 +261,9 @@ select{
     padding: 10px 15px;
     outline: none;
 }
+.filtros input:focus{
+    border: 1px solid #ffffff;
+}
     /* estilos del aside texto */
 .texto-inferior-y-superior{
     display: flex;
@@ -263,6 +281,9 @@ select{
 .fuente input{
     margin: 5px 0 10px 0;
     width: 130px;
+}
+.fuente input:focus{
+    border: 1px solid #ffffff;
 }
     /* estilos section color y fondo */
 .inputs-color-y-fondo{
@@ -291,7 +312,7 @@ select{
 }
 .input-color input{
     border: 1px solid transparent;
-    background-color: #1a1221;
+    background-color: transparent;
     padding: 0;
     width: 20px;
     border-radius: 50%;
@@ -302,7 +323,7 @@ select{
 }
     /* estilos generales de botones */
 .botones{
-    border: 0;
+    border: 1px solid transparent;
     border-radius: 5px;
     outline: none;
     background-color: #1a1221;
@@ -317,11 +338,8 @@ select{
     border: 1px solid #ffffff;
 }
 /* aside */
+
 /* estilos para modo claro en js */
-
-
-
-
 .modo-claro-barra-navegacion{
     color: #000000;
     background-color: #ffdab9;
@@ -337,34 +355,20 @@ select{
 .modoClaroLi li button:hover{
     background-color: whitesmoke;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-.ancho-necesario{
-    width: 250px;
-}
-
 .modoClaro{
     color: #000000;
     background-color: papayawhip;
 }
 .modoClaroInput{
     background-color: #ffdab9;
+    color: #000000;
 }
+/* estilos para modo claro en js */
 
-
-
-
-
+/* estilos para funcionalidades de js */
+.ancho-necesario{
+    width: 250px;
+}
 .mostrar{
     display: flex;
 }

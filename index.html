@@ -13,6 +13,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous"></script>
     <title>Editor de memes</title>
 
 </head>
@@ -32,6 +38,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <!-- div que va a ser modificado que seria el meme completo -->
         <article id="fondo-meme" class="fondo-meme">
@@ -41,8 +48,9 @@
                 <!-- en este div se agrega la imagen del meme que abarca todo el div  -->
             </div>
         </article>
-        <button class="boton-descargar"><i class="fas fa-download"></i>Descaragar meme</button>
+        <button id="boton-descarga-meme" class="boton-descargar"><i class="fas fa-download"></i>Descaragar meme</button>
     </main>
+
     <!-- parte lateral que emerge al tocar el boton del nav que dice IMAGEN -->
     <aside id="aside-imagen">
         <section class="titulo">
@@ -59,7 +67,8 @@
             <h3>FONDO</h3>
             <div class="opciones-fondo">
                 <!-- tipo de color de fondo del div para hacer blend con la imagen -->
-                <div class="input-color"><input aria-label="color de fondo de imagen" id="input-color-para-blend" type="color" value="#000000">#000000</div>
+                <div class="input-color"><input aria-label="color de fondo de imagen" id="input-color-para-blend"
+                        type="color" value="#000000">#000000</div>
                 <!-- tipos de blend para imagen -->
                 <select aria-label="opciones de mezcla de fondo e imagen" name="" id="modo-blend-fondo-e-imagen">
                     <option value="unset">Ninguno</option>
@@ -102,27 +111,32 @@
                 <label for="">NEGATIVO</label>
                 <input id="rango-negativo" type="range" value="0" min="0" max="1" step="0.1">
                 <!-- boton de reseteo de filtros  -->
-                <button aria-label="reseteo de filtros" id="boton-reseteo-filtros" class="botones" type="reset">Restablecer filtros</button>
+                <button aria-label="reseteo de filtros" id="boton-reseteo-filtros" class="botones"
+                    type="reset">Restablecer filtros</button>
             </div>
         </section>
     </aside>
+
     <!-- parte lateral que emerge al tocar el boton del nav que dice IMAGEN -->
     <aside id="aside-texto">
         <section class="titulo">
             <h2>TEXTO</h2>
             <!-- boton de equis para salir de aside -->
-            <button aria-label="cerrar panel" class="boton-equis" id="boton-escape-texto"><i class="far fa-times-circle"></i></button>
+            <button aria-label="cerrar panel" class="boton-equis" id="boton-escape-texto"><i
+                    class="far fa-times-circle"></i></button>
         </section>
         <section class="texto-inferior-y-superior">
             <!-- parte de ingresar contenido al div con texto superior -->
             <h3>SUPERIOR</h3>
-            <input aria-label="ingresar contenido de texto de arriba" id="contenido-texto-arriba" type="textarea" class="input-texto">
+            <input aria-label="ingresar contenido de texto de arriba" id="contenido-texto-arriba" type="textarea"
+                class="input-texto">
             <label for=""><input id="desaparecer-texto-arriba" type="checkbox">Sin texto superior</label>
         </section>
         <section class="texto-inferior-y-superior">
             <!-- parte de ingresar contenido al div con texto inferior -->
             <h3>INFERIOR</h3>
-            <input aria-label="ingresar contenido de texto de abajo" id="contenido-texto-abajo" type="textarea" class="input-texto">
+            <input aria-label="ingresar contenido de texto de abajo" id="contenido-texto-abajo" type="textarea"
+                class="input-texto">
             <label for=""><input id="desaparecer-texto-abajo" type="checkbox">Sin texto inferior</label>
         </section>
         <section class="fuente">
@@ -143,9 +157,12 @@
                     <!-- tamaño del texto -->
                     <input aria-label="tamaño de letra" id="tamaño-letra" type="number" class="input-texto">
                     <!-- botones de redireccion del texto -->
-                    <button aria-label="mover texto a la izquierda" id="boton-izquierda" class="botones"><i class="fas fa-align-left"></i></button>
-                    <button aria-label="mover texto al centro" id="boton-centro" class="botones"><i class="fas fa-align-center"></i></button>
-                    <button aria-label="mover texto a la derecha" id="boton-derecha" class="botones"><i class="fas fa-align-right"></i></button>
+                    <button aria-label="mover texto a la izquierda" id="boton-izquierda" class="botones"><i
+                            class="fas fa-align-left"></i></button>
+                    <button aria-label="mover texto al centro" id="boton-centro" class="botones"><i
+                            class="fas fa-align-center"></i></button>
+                    <button aria-label="mover texto a la derecha" id="boton-derecha" class="botones"><i
+                            class="fas fa-align-right"></i></button>
                 </div>
             </div>
         </section>
@@ -155,12 +172,14 @@
                 <div>
                     <!-- color letra -->
                     <h3>COLOR</h3>
-                    <div class="input-color"><input aria-label="color de letra" value="#000000" id="input-color-letra" type="color">#000000</div>
+                    <div class="input-color" id="div-input-letra"><input aria-label="color de letra" value="#000000"
+                            id="input-color-letra" type="color">#000000</div>
                 </div>
                 <div>
                     <!-- color fondo del div del texto -->
                     <h3>FONDO</h3>
-                    <div class="input-color"><input aria-label="color de fondo de texto" value="#ffffff" id="input-color-fondo" type="color">#ffffff</div>
+                    <div class="input-color" id="div-input-fondo"><input aria-label="color de fondo de texto"
+                            value="#ffffff" id="input-color-fondo" type="color">#ffffff</div>
                 </div>
             </div>
             <label for=""><input class="boton-check" id="fondo-transparente" type="checkbox">Fondo transparente</label>
@@ -195,7 +214,9 @@
             </select>
         </section>
     </aside>
+
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/descargarImagen.js"></script>
 </body>
 
 </html>

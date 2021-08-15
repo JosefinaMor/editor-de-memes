@@ -43,6 +43,9 @@ const botonReseteoFiltros    = document.getElementById("boton-reseteo-filtros");
 const inputEspaciado         = document.getElementById("input-espaciado");
 const tipoDeInterlineado     = document.getElementById("tipo-de-interlineado");
 const inputsColoryyfondo     = document.getElementById("inputs-colory-y-fondo");
+const divInputColor          = document.querySelector(".input-color");
+const divInputColorLetra     = document.getElementById("div-input-letra");
+const divInputColorFondo     = document.getElementById("div-input-fondo");
 
 const cambioDeModo = () =>{
     cambioBody.classList.toggle("modoClaro");
@@ -51,10 +54,26 @@ const cambioDeModo = () =>{
     asideTexto.classList.toggle("modoClaro");
     botonesDelNav.classList.toggle("modoClaroLi");
     botonEscapeTexto.classList.toggle("modoClaro");
+    botonEscapeImagen.classList.toggle("modoClaro");
     urlImagen.classList.toggle("modoClaroInput");
     contenidoTextoArriba.classList.toggle("modoClaroInput");
     contenidoTextoAbajo.classList.toggle("modoClaroInput");
     tamañoLetra.classList.toggle("modoClaroInput");
+    inputColorParaBlend.classList.toggle("modoClaroInput");
+    modoBlendFondoEImagen.classList.toggle("modoClaroInput");
+    inputEspaciado.classList.toggle("modoClaroInput");
+    tipoDeLetra.classList.toggle("modoClaroInput")
+    tipoDeInterlineado.classList.toggle("modoClaroInput");
+    botonMoverIzquierda.classList.toggle("modoClaroInput");
+    botonMoverCentro.classList.toggle("modoClaroInput");
+    botonMoverDerecha.classList.toggle("modoClaroInput");
+    botonSacarContorno.classList.toggle("modoClaroInput");
+    botonContornoClaro.classList.toggle("modoClaroInput");
+    botonContornoOscuro.classList.toggle("modoClaroInput");
+    divInputColor.classList.toggle("modoClaroInput");
+    divInputColorLetra.classList.toggle("modoClaroInput");
+    divInputColorFondo.classList.toggle("modoClaroInput");
+    botonReseteoFiltros.classList.toggle("modoClaroInput");
     if(cambioBody.classList == "modoClaro"){
         botonModoClaro.innerHTML = '<i class="far fa-lightbulb"></i>Modo claro</button>';
     }else{
