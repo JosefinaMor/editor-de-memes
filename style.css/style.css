@@ -54,6 +54,9 @@ li button{
 li .remarco-boton{
     background-color: #3b2a4b;
 }
+button i {
+    margin-right: 5px;
+}
 li button:hover{
     background-color: #3b2a4b;
 }
@@ -61,36 +64,20 @@ li button:focus{
     background-color: #2e1e3d;
     border: 1px solid #ffffff;
 }
-
-.modo-claro-barra-navegacion{
-    color: #000000;
-    background-color: #ffdab9;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-}
-.modoClaroLi li button{
-    color: #000000;
-    background-color: #ffdab9;
-}
-.modoClaroLi li .remarcoBoton{
-    background-color: #b8b8b8;
-}
-.modoClaroLi li button:hover{
-    background-color: whitesmoke;
-}
-button i {
-    margin-right: 5px;
-}
+/* main */
 main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+    /* color preseteado para el fondo de imagen del meme */
 .fondo-meme{
     background-color: #000000;
-    margin-top: 130px;
+    margin-top: 80px;
     position: relative;
 }
+    /* donde se inserta la imagen y se acomodan los divs de texto */
 .conteiner-meme{
     width: 600px;
     height: 600px;
@@ -99,9 +86,10 @@ main{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-blend-mode: unset;
+    background-size: cover;
     z-index: 0;
 }
+    /* estilos generales del texto */
 .texto-meme{
     width: 100%;
     font-family: Verdana, sans-serif;
@@ -113,6 +101,7 @@ main{
     z-index: 1;
     margin: 0; 
 }
+    /* posicionamiento del texto de arriba y abajo */
 .texto-arriba{
     position: absolute;
     top: 0;
@@ -121,6 +110,7 @@ main{
     position: absolute;
     bottom: 0; 
 }
+    /* estilos de boton de descarga */
 .boton-descargar{
     border: 0;
     border-radius: 5px;
@@ -130,7 +120,8 @@ main{
     border: 1px transparent solid;
     font-size: 15px;
     padding: 10px;
-    margin: 40px 0 ;
+    margin: 40px 0;
+    transition: 0.2s;
 }
 .boton-descargar:hover{
     background-color: #13771b;
@@ -139,6 +130,8 @@ main{
     background-color: #13771b;
     border: 1px solid #ffffff;
 }
+/* main */
+/* aside */
 aside{
     background-color: #3b2a4b;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
@@ -147,14 +140,16 @@ aside{
     justify-content: space-between;
     align-items: flex-start;
     width: 300px;
+    height: 150%;
     padding: 40px 20px;
     overflow: auto;
     position: absolute;
     right: 0;
     z-index: 2;
 }
-aside div{
+aside section{
     margin: 10px 0 0 0;
+    width: 100%;
 }
 aside h3{
     margin: 5px 0 ;
@@ -178,19 +173,35 @@ aside h3{
 .boton-equis:hover{
     color: #b8b8b8;
 }
-.opciones-fondo{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
+.boton-equis:focus{
+    color: #b8b8b8;
+    border: 1px solid #ffffff;
+    border-radius: 45%;
 }
+    /* estilos del aside imagen */
+        /* estilo del input en general */
 .input-texto{
-    width: 250px;
+    width: 100%;
     margin: 10px 0;
     color: #ffffff;
     border-radius: 5px;
     background-color: #1a1221;
     border: 1px solid transparent;
     padding: 10px 15px;
+    outline: none;
+}
+    /* estilos para la section fondo */
+.opciones-fondo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.opciones-fondo input{
+    border: 1px solid transparent;
+    background-color: #1a1221;
+    padding: 0;
+    width: 20px;
+    border-radius: 50%;
     outline: none;
 }
 .opciones-fondo label{
@@ -206,16 +217,9 @@ aside h3{
     padding: 10px;
     
 }
-.opciones-fondo input{
-    border: 1px solid transparent;
-    background-color: #1a1221;
-    padding: 0;
-    width: 20px;
-    border-radius: 50%;
-    outline: none;
-}
+    /* estilos generales del select */
 select{
-    margin: 10px 0 5px 0;
+    margin: 0;
     width: 45%;
     border-radius: 5px;
     background-color: #1a1221;
@@ -224,9 +228,7 @@ select{
     padding: 10px 15px;
     outline: none;
 }
-.ancho-necesario{
-    width: 250px;
-}
+    /* section de filtros */
 .filtros{
     width: 250px;
     height: 600px;
@@ -244,18 +246,13 @@ select{
     padding: 10px 15px;
     outline: none;
 }
-.modoClaro{
-    color: #000000;
-    background-color: papayawhip;
-}
-.modoClaroInput{
-    background-color: #ffdab9;
-}
+    /* estilos del aside texto */
 .texto-inferior-y-superior{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+    /* estilos de section fuente */
 .fuente{ 
     padding: 10px 0;
     display: flex;
@@ -267,6 +264,7 @@ select{
     margin: 5px 0 10px 0;
     width: 130px;
 }
+    /* estilos section color y fondo */
 .inputs-color-y-fondo{
     width: 250px;
     display: flex;
@@ -281,7 +279,28 @@ select{
     flex-direction: column;
     justify-content: center;
 } 
-
+.input-color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1221;
+    height: 40px;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 0;
+}
+.input-color input{
+    border: 1px solid transparent;
+    background-color: #1a1221;
+    padding: 0;
+    width: 20px;
+    border-radius: 50%;
+    outline: none;
+}
+.boton-check{
+    margin-top: 10px;
+}
+    /* estilos generales de botones */
 .botones{
     border: 0;
     border-radius: 5px;
@@ -297,24 +316,55 @@ select{
     background-color: #2e1e3d;
     border: 1px solid #ffffff;
 }
-.input-color{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1a1221;
-height: 40px;
-    border-radius: 5px;
-    padding: 15px 5px;
-    margin: 5px 0;
+/* aside */
+/* estilos para modo claro en js */
+
+
+
+
+.modo-claro-barra-navegacion{
+    color: #000000;
+    background-color: #ffdab9;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 }
-.input-color input{
-    border: 1px solid transparent;
-    background-color: #1a1221;
-    padding: 0;
-    width: 20px;
-    border-radius: 50%;
-    outline: none;
+.modoClaroLi li button{
+    color: #000000;
+    background-color: #ffdab9;
 }
+.modoClaroLi li .remarcoBoton{
+    background-color: #b8b8b8;
+}
+.modoClaroLi li button:hover{
+    background-color: whitesmoke;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.ancho-necesario{
+    width: 250px;
+}
+
+.modoClaro{
+    color: #000000;
+    background-color: papayawhip;
+}
+.modoClaroInput{
+    background-color: #ffdab9;
+}
+
+
+
+
+
 .mostrar{
     display: flex;
 }
@@ -347,6 +397,9 @@ height: 40px;
     .texto-meme{
         font-size: 25px;
         padding: 20px 50px;
+    }
+    section{
+        width: 100%;
     }
 
 }

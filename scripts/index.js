@@ -182,7 +182,8 @@ const elegirColorParaBlend = () =>{
 const elegirTipoDeBlend = () =>{
     let valor = modoBlendFondoEImagen.options[modoBlendFondoEImagen.selectedIndex];
     valor = valor.value;
-    conteinerMeme.style.blend = valor;
+    console.log(valor);
+    conteinerMeme.style.mixBlendMode = valor;
 }
 
 const graduacionDeFiltroBrillo = () =>{
@@ -217,12 +218,12 @@ const graduacionDeFiltroSepia = () =>{
 
 const graduacionDeFiltroHue = () =>{
     const valor = inputRangoHue.value;
-    conteinerMeme.style.filter = "hue-rotation(" + valor + "deg)";
+    conteinerMeme.style.filter = "hue-rotate(" + valor + "deg)";
 }
 
 const graduacionDeFiltroSaturado = () =>{
     const valor = inputRangoSaturado.value;
-    conteinerMeme.style.filter = "saturation(" + valor + "%)";
+    conteinerMeme.style.filter = "saturate(" + valor + "%)";
 }
 
 const graduacionDeFiltroNegativo = () =>{
@@ -236,7 +237,7 @@ const resetearFiltros = () =>{
     inputRangoOpacidad.value   = 1;
     inputRangoContraste.value  = 100;   
     inputRangoDesenfoque.value = 0;
-    inputRangoGrises.value     = 1;
+    inputRangoGrises.value     = 0;
     inputRangoSepia.value      = 0;
     inputRangoHue.value        = 0;
     inputRangoSaturado.value   = 100;
