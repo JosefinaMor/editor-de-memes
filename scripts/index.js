@@ -100,7 +100,7 @@ const cambioDeModo = () =>{
     asideTexto.classList.toggle("modoClaro");
     botonesDelNav.classList.toggle("modoClaroLi");
     botonEscapeTexto.classList.toggle("modoClaro");
-    botonEscapeImagen.classList.toggle("modoClaro");
+    botonEquisImagen.classList.toggle("modoClaro");
     urlImagen.classList.toggle("modoClaroInput");
     contenidoTextoArriba.classList.toggle("modoClaroInput");
     contenidoTextoAbajo.classList.toggle("modoClaroInput");
@@ -120,6 +120,7 @@ const cambioDeModo = () =>{
     divInputColorLetra.classList.toggle("modoClaroInput");
     divInputColorFondo.classList.toggle("modoClaroInput");
     botonReseteoFiltros.classList.toggle("modoClaroInput");
+
     if(cambioBody.classList == "modoClaro"){
         botonModoClaro.innerHTML = '<i class="far fa-lightbulb"></i>Modo claro</button>';
     }else{
