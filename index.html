@@ -30,11 +30,11 @@
             <h1>Generador de Memes</h1>
             <ul id="botones-del-nav">
                 <!-- boton para aparecer y desaparecer el aside de imagen -->
-                <li><button id="boton-aside-imagen"><i class="fas fa-file-image"></i>Imagen</button></li>
+                <li><button id="boton-aside-imagen" aria-label="aparecer opciones de imagen"><i class="fas fa-file-image"></i>Imagen</button></li>
                 <!-- boton para aparecer y desaparecer el aside de texto -->
-                <li><button id="boton-aside-texto"><i class="fas fa-font"></i>Texto</button></li>
+                <li><button id="boton-aside-texto" aria-label="aparecer opciones de texto"><i class="fas fa-font"></i>Texto</button></li>
                 <!-- boton para cambiar de modo oscuro al modo claro y viceversa -->
-                <li><button id="modo-claro"><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
+                <li><button id="modo-claro" aria-label="cambiar de modo oscuro a claro"><i class="far fa-lightbulb"></i>Modo oscuro</button></li>
             </ul>
         </nav>
     </header>
@@ -48,7 +48,7 @@
                 <!-- en este div se agrega la imagen del meme que abarca todo el div  -->
             </div>
         </article>
-        <button id="boton-descarga-meme" class="boton-descargar"><i class="fas fa-download"></i>Descaragar meme</button>
+        <button id="boton-descarga-meme" class="boton-descargar" aria-label="descargar imagen"><i class="fas fa-download"></i>Descaragar meme</button>
     </main>
 
     <!-- parte lateral que emerge al tocar el boton del nav que dice IMAGEN -->
@@ -56,12 +56,12 @@
         <section class="titulo">
             <h2>IMAGEN</h2>
             <!-- boton de equis para salir de aside -->
-            <button id="boton-equis-imagen" class="boton-equis"><i class="far fa-times-circle"></i></button>
+            <button id="boton-equis-imagen" class="boton-equis" aria-label="salir de opciones de imagen"><i class="far fa-times-circle"></i></button>
         </section>
         <section>
             <h3>URL</h3>
             <!-- input en donde se ingresa el url de la imagen -->
-            <input aria-label="cerrar panel" id="url-imagen" class="input-texto" type="text">
+            <input aria-label="url de imagen" id="url-imagen" class="input-texto" type="text">
         </section>
         <section>
             <h3>FONDO</h3>
@@ -111,7 +111,7 @@
                 <label for="">NEGATIVO</label>
                 <input id="rango-negativo" type="range" value="0" min="0" max="1" step="0.1">
                 <!-- boton de reseteo de filtros  -->
-                <button aria-label="reseteo de filtros" id="boton-reseteo-filtros" class="botones"
+                <button aria-label="resetear de filtros" id="boton-reseteo-filtros" class="botones"
                     type="reset">Restablecer filtros</button>
             </div>
         </section>
@@ -122,7 +122,7 @@
         <section class="titulo">
             <h2>TEXTO</h2>
             <!-- boton de equis para salir de aside -->
-            <button aria-label="cerrar panel" class="boton-equis" id="boton-escape-texto"><i
+            <button aria-label="cerrar panel opciones de texto" class="boton-equis" id="boton-escape-texto"><i
                     class="far fa-times-circle"></i></button>
         </section>
         <section class="texto-inferior-y-superior">
@@ -130,14 +130,14 @@
             <h3>SUPERIOR</h3>
             <input aria-label="ingresar contenido de texto de arriba" id="contenido-texto-arriba" type="textarea"
                 class="input-texto">
-            <label for=""><input id="desaparecer-texto-arriba" type="checkbox">Sin texto superior</label>
+            <label for=""><input aria-label="desaparecer texto superior" id="desaparecer-texto-arriba" type="checkbox">Sin texto superior</label>
         </section>
         <section class="texto-inferior-y-superior">
             <!-- parte de ingresar contenido al div con texto inferior -->
             <h3>INFERIOR</h3>
             <input aria-label="ingresar contenido de texto de abajo" id="contenido-texto-abajo" type="textarea"
                 class="input-texto">
-            <label for=""><input id="desaparecer-texto-abajo" type="checkbox">Sin texto inferior</label>
+            <label for=""><input aria-label="desaparecer texto inferior" id="desaparecer-texto-abajo" type="checkbox">Sin texto inferior</label>
         </section>
         <section class="fuente">
             <h3>FUENTE</h3>
@@ -182,7 +182,7 @@
                             value="#ffffff" id="input-color-fondo" type="color">#ffffff</div>
                 </div>
             </div>
-            <label for=""><input class="boton-check" id="fondo-transparente" type="checkbox">Fondo transparente</label>
+            <label for=""><input aria-label="hacer fondo de texto transparente" class="boton-check" id="fondo-transparente" type="checkbox">Fondo transparente</label>
         </section>
         <!-- botones de elegir el contorno -->
         <section>
