@@ -78,6 +78,7 @@ const inputEspaciado         = document.getElementById("input-espaciado");
     //opciones de espaciado
 const tipoDeInterlineado     = document.getElementById("tipo-de-interlineado");
 
+//barra de navegacion
 const aparecerAsideImagen = () =>{
     asideImagen.classList.toggle("mostrar"); 
     asideTexto.classList.remove("mostrar");
@@ -126,6 +127,7 @@ const cambioDeModo = () =>{
     }   
 }
 
+//aside de texto
 const salirAsideImagen = () =>{
     asideImagen.classList.remove("mostrar");
     botonAsideImagen.classList.remove("remarco-boton");
@@ -194,7 +196,15 @@ const graduacionDeFiltroNegativo = () =>{
 }
 
 const resetearFiltros = () =>{
-    conteinerMeme.style.filter = "brightness(1), opacity(1), contrast(100%), blur(0px), grayscale(0%), sepia(0%), hue-rotation(0deg), saturation(0%), invert(0)";
+    conteinerMeme.style.filter = "brightness(1)";
+    conteinerMeme.style.filter = "opacity(1)";
+    conteinerMeme.style.filter = "contrast(100%)";
+    conteinerMeme.style.filter = "blur(0px)";
+    conteinerMeme.style.filter = "grayscale(0%)";
+    conteinerMeme.style.filter = "sepia(0%)";
+    conteinerMeme.style.filter = "hue-rotation(0deg)";
+    conteinerMeme.style.filter = "saturation(0%)";
+    conteinerMeme.style.filter = "invert(0)";
     inputRangoBrillo.value     = 1;
     inputRangoOpacidad.value   = 1;
     inputRangoContraste.value  = 100;   
@@ -206,6 +216,7 @@ const resetearFiltros = () =>{
     inputRangoNegativo.value   = 0;
 }
 
+//aside texto
 const salirAsideTexto = () =>{
     asideTexto.classList.remove("mostrar");
     botonAsideTexto.classList.remove("remarco-boton");
@@ -333,41 +344,29 @@ inputRangoNegativo.oninput     = graduacionDeFiltroNegativo;
 botonReseteoFiltros.onclick    = resetearFiltros;
 
 //aside de texto
-botonEquisTexto.onclick       = salirAsideTexto;
+botonEscapeTexto.onclick       = salirAsideTexto;
     //texto superiorior
 contenidoTextoArriba.oninput   = cambiarContenidoArriba;
 botonDesaparecerArriba.onclick = desaparecerBloqueTextoArriba;
     //texto inferirior
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-botonDesaparecerAbajo.oninput  = desaparecerBloqueTextoAbajo;//preguntar por que lo selecciona con la barra espaciadora
-
 contenidoTextoAbajo.oninput    = cambiarContenidoAabajo;
+botonDesaparecerAbajo.oninput  = desaparecerBloqueTextoAbajo;
+    //fuente
 tipoDeLetra.oninput            = cambiarLetra;
 tamañoLetra.onblur             = cambiarTamañoLetra;
+        //moverel texto
 botonMoverIzquierda.onclick    = moverTextoIzquierda;
 botonMoverCentro.onclick       = moverTextoCentro;
 botonMoverDerecha.onclick      = moverTextoDerecha;
+    //color y fondo de texto del meme
 inputColorLetra.oninput        = cambiarColorLetra;
 inputColorFondoTexto.oninput   = cambiarColorFondoTexto;
 fondoTextoTransparente.oninput = hacerFondoDeTextoTransparente;
+    //contorno
 botonSacarContorno.onclick     = sacarContornoDeLetras;
 botonContornoClaro.onclick     = ponerContornoClaro;
 botonContornoOscuro.onclick    = ponerContornoOscuro;
-
-
+    //espaciado
 inputEspaciado.oninput         = cambiarTamañoEspaciado;
+    //tipo de interlineado
 tipoDeInterlineado.oninput     = elegirTipoDeInterlineado;
