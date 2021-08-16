@@ -27,6 +27,7 @@ const urlImagen              = document.getElementById("url-imagen");
 
     //opciones de fondo cambios en la imagen
 const inputColorParaBlend    = document.getElementById("input-color-para-blend");
+const valorColorBlend        = document.getElementById("valor-color-blend");
 const modoBlendFondoEImagen  = document.getElementById("modo-blend-fondo-e-imagen");
 
     //filtros
@@ -64,8 +65,10 @@ const botonMoverDerecha      = document.getElementById("boton-derecha");
     //color y fondo del texto del meme
 const inputsColoryyfondo     = document.getElementById("inputs-colory-y-fondo");
 const inputColorLetra        = document.getElementById("input-color-letra");
+const valorColorLetra        = document.getElementById("valor-color-letra");
 const inputColorFondoTexto   = document.getElementById("input-color-fondo");
 const fondoTextoTransparente = document.getElementById("fondo-transparente");
+const valorColorfondo        = document.getElementById("valor-color-fondo");
 
     //opciones de contorno
 const botonSacarContorno     = document.getElementById("sacar-contorno");
@@ -128,7 +131,7 @@ const cambioDeModo = () =>{
     }   
 }
 
-//aside de texto
+//aside de imagen
 const salirAsideImagen = () =>{
     asideImagen.classList.remove("mostrar");
     botonAsideImagen.classList.remove("remarco-boton");
@@ -142,6 +145,7 @@ const insertaImagen = () =>{
 const elegirColorParaBlend = () =>{
     const valor = inputColorParaBlend.value;
     colorFondoMeme.style.backgroundColor = valor;
+    valorColorBlend.innerText = valor; 
 }
 
 const elegirTipoDeBlend = () =>{
@@ -273,12 +277,14 @@ const cambiarColorLetra = () =>{
     const valor = inputColorLetra.value;
     textoArriba.style.color = valor;
     textoAbajo.style.color = valor;
+    valorColorLetra.innerText = valor;
 }
 
 const cambiarColorFondoTexto = () =>{
     const valor = inputColorFondoTexto.value;
     textoArriba.style.backgroundColor = valor;
     textoAbajo.style.backgroundColor = valor;
+    valorColorFondo.innerText = valor;
 }
 
 const hacerFondoDeTextoTransparente = () =>{
