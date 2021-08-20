@@ -4,22 +4,22 @@
 }
 
 body{
-    color: #ffffff;
-    background-color: #3b2a4b;
     display: flex;
     flex-direction: column;
+    background-color: #3b2a4b;
+    color: #ffffff;   
     margin: 0;
 }
 /*barra de navegacion*/
 .barra-navegacion{
-    background-color: #1a1221;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #1a1221;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  
     padding: 10px 0;
-    position: fixed;
+    position: static;
     z-index: 1;
 }
 nav{
@@ -29,10 +29,9 @@ nav{
     align-items: center;
 }
 h1{
-    font-size: 35px;
-    font-weight: 500;
-    margin: 10px 0 0 0;
     width: 100%;
+    margin: 10px 0 0 0;
+    font-size: 40px;  
 }
 ul{
     display: flex;
@@ -42,203 +41,335 @@ ul{
 ul li{
     list-style: none;
 }
+    /* botones del navbar */
 li button{
     border: 0;
     border-radius: 5px;
     outline: none;
     background-color: #1a1221;
     color: #ffffff;
+    border: 1px transparent solid;
     padding: 10px;
     margin: 0 10px;
 }
 li .remarco-boton{
     background-color: #3b2a4b;
 }
-li button:hover{
-    background-color: #3b2a4b;
-}
-
-.modo-claro-barra-navegacion{
-    color: #000000;
-    background-color: #e0e0e0;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-}
-.modoClaroLi li button{
-    color: #000000;
-    background-color: #e0e0e0;
-}
-.modoClaroLi li .remarcoBoton{
-    background-color: #b8b8b8;
-}
-.modoClaroLi li button:hover{
-    background-color: #b8b8b8;
-}
 button i {
     margin-right: 5px;
 }
+li button:hover{
+    background-color: #3b2a4b;
+}
+li button:focus{
+    background-color: #2e1e3d;
+    border: 1px solid #ffffff;
+}
+/* barra de navegacion */
+
+/* main */
 main{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+    /* color preseteado para el fondo de imagen del meme */
 .fondo-meme{
     background-color: #000000;
-    margin-top: 130px;
+    margin-top: 80px;
+    height: 600px;
     position: relative;
 }
+    /* donde se inserta la imagen y se acomodan los divs de texto */
 .conteiner-meme{
     width: 600px;
     height: 600px;
-    background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-blend-mode: unset;
+    background-color: transparent;
+    background-size: cover;
     z-index: 0;
 }
-.texto-arriba{
+    /* estilos generales del texto */
+.texto-meme{
     width: 100%;
-    font-family: Verdana, sans-serif;
-    color: #000000;
     background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 35px 50px;
+    margin: 0; 
+    font-family: Verdana, sans-serif;
+    font-size: 40px;
+    z-index: 1;
+}
+    /* posicionamiento del texto de arriba y abajo */
+.texto-arriba{
     position: absolute;
     top: 0;
-    display: block;
-    text-align: center;
-    padding: 35px 50px;
-    font-size: 40px;
-    z-index: 1;
-    margin: 0; 
 }
 .texto-abajo{
-    width: 100%;
-    font-family: Verdana, sans-serif;
-    color: #000000;
-    background-color: #ffffff;
     position: absolute;
-    bottom: 0;
-    text-align: center;
-    padding: 35px 50px;
-    font-size: 40px;
-    z-index: 1;
-    margin: 0; 
+    bottom: 0; 
 }
+    /* estilos de boton de descarga */
 .boton-descargar{
     border: 0;
     border-radius: 5px;
     outline: none;
     background-color: #1a9c25;
     color: #ffffff;
-    font-size: 15px;
+    border: 1px transparent solid;
     padding: 10px;
-    margin: 40px 0 0 0 ;
+    margin: 40px 0;
+    font-size: 15px;
+    transition: 0.2s;
 }
-
 .boton-descargar:hover{
     background-color: #13771b;
 }
+.boton-descargar:focus{
+    background-color: #13771b;
+    border: 1px solid #ffffff;
+}
+/* main */
+
+/* aside */
 aside{
-    background-color: #3b2a4b;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    width: 300px;
+    height: 150%;
     display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    height: 100vh;
-    width: 300px;
-    padding: 20px;
+    padding: 40px 20px;
+    background-color: #3b2a4b;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
     overflow: auto;
     position: absolute;
-    right: 1px;
+    right: 0;
     z-index: 2;
 }
-aside div{
-margin: 10px 0;
+aside section{
+    margin: 10px 0 0 0;
+    width: 100%;
 }
 aside h3{
-    margin: 0;
+    margin: 5px 0 ;
 }
 .titulo{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
+    /* boton de escape de aside */
 .boton-equis{
     border: none;
     outline: none;
-    background-color: #251b2f;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #3b2a4b;
     color: #ffffff;
     align-items: flex-end;
     font-size: 25px;
+    transition: 0.2s;
 }
 .boton-equis:hover{
     color: #b8b8b8;
 }
-
+.boton-equis:focus{
+    color: #ffffff;
+}
+    /* estilos del aside imagen */
+        /* estilo del input en general */
+.input-texto{
+    width: 100%;
+    margin: 10px 0;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #1a1221;
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    outline: none;
+}
+.input-texto:focus{
+    border: 1px solid #ffffff;
+}
+    /* estilos para la section fondo */
+.opciones-fondo{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.opciones-fondo input{
+    border: 1px solid transparent;
+    background-color: #1a1221;
+    padding: 0;
+    width: 20px;
+    border-radius: 50%;
+    outline: none;
+}
+.opciones-fondo input:focus{
+    border: 1px solid #ffffff;
+}
+.opciones-fondo label{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 10px 0 0;
+    width: 45%;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #1a1221;
+    border: 1px solid transparent;
+    padding: 10px;
+    
+}
+    /* estilos generales del select */
+select{
+    margin: 0;
+    width: 45%;
+    border-radius: 5px;
+    background-color: #1a1221;
+    border: 1px solid transparent;
+    color: white;
+    padding: 10px 15px;
+    outline: none;
+}
+.ancho-necesario{
+    width: 100%;
+}
+select:focus{
+    border: 1px solid #ffffff;
+}
+    /* section de filtros */
 .filtros{
+    width: 250px;
     height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
 }
-aside{
-    background-color: #251b2f;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 100vh;
-    width: 300px;
-    padding: 20px;
-    overflow: auto;
-    position: absolute;
-    right: 1px;
-    z-index: 2;
+.filtros input{
+    width: 100%;
+    border-radius: 5px;
+    background-color: #1a1221;
+    border: 1px solid transparent;
+    color: white;
+    padding: 10px 15px;
+    outline: none;
 }
-.modoClaro{
-    color: #000000;
-    background-color: #fafafa;
+.filtros input:focus{
+    border: 1px solid #ffffff;
 }
+    /* estilos del aside texto */
 .texto-inferior-y-superior{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-.fuente{
+    /* estilos de section fuente */
+.fuente{ 
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
 }
 .fuente input{
-    width: 100px;
+    margin: 5px 0 10px 0;
+    width: 130px;
+}
+.fuente input:focus{
+    border: 1px solid #ffffff;
+}
+    /* estilos section color y fondo */
+.inputs-color-y-fondo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inputs-color-y-fondo div{
+    width: 120px;
 }
 .color-y-fondo{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-.inputs-color-y-fondo{
+    justify-content: center;
+} 
+.input-color{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #1a1221;
+    height: 40px;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 0;
 }
+.input-color input{
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: 0;
+    width: 20px;
+    border-radius: 50%;
+    outline: none;
+}
+.boton-check{
+    margin-top: 10px;
+}
+    /* estilos generales de botones */
 .botones{
-    border: 0;
+    border: 1px solid transparent;
     border-radius: 5px;
     outline: none;
     background-color: #1a1221;
     color: #ffffff;
     padding: 10px;
+    transition: 0.2s;
 }
-.input-color{
-    background-color: #1a1221;
-    border-radius: 5px;
-    padding: 15px 5px;
-    margin: 10px 10px 0 0 ;
+.botones:hover{
+    background-color: #2e1e3d;
 }
+.botones:focus{
+    background-color: #2e1e3d;
+    border: 1px solid #ffffff;
+}
+/* aside */
+
+/* estilos para modo claro en js */
+.modo-claro-barra-navegacion{
+    color: #000000;
+    background-color: #ffdab9;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+.modoClaroLi li button{
+    color: #000000;
+    background-color: #ffdab9;
+}
+.modoClaroLi li .remarcoBoton{
+    background-color: #b8b8b8;
+}
+.modoClaroLi li button:hover{
+    background-color: whitesmoke;
+}
+.modoClaro{
+    color: #000000;
+    background-color: papayawhip;
+}
+.modoClaroInput{
+    background-color: #ffdab9;
+    color: #000000;
+}
+/* estilos para modo claro en js */
+
+/* estilos para funcionalidades de js */
 .mostrar{
     display: flex;
 }
@@ -246,26 +377,49 @@ aside{
     display: none;
 }
 @media (max-width: 600px) {
+    h1{
+        text-align: center;
+        font-size: 25px;
+    }
     aside{
         width: 100vw;
+    }
+    aside div{
+        width: 100%;
     }
     .titulo h2 {
         text-align: center;
     }
-    .conteiner-meme{
+    .fondo-meme{
+        margin-top: 60px;
         width: 90%;
         height: 50vh;
     }
-    p{
-        font-size: 15px;
+    .conteiner-meme{
+        width: 100%;
+        height: 50vh;
     }
-    .texto-arriba{
-        height: 40px;
-        padding: 10px;
+    .texto-meme{
+        font-size: 25px;
+        padding: 20px 50px;
     }
-    .texto-abajo{
-        height: 40px;
-        padding: 10px;
+    .filtros{
+        width: 100%;
+    }
+    section{
+        width: 100%;
+    }
+    .fuente input{
+        width: 60%;
+    }
+    .inputs-color-y-fondo{
+        width: 100%;
+    }
+    .inputs-color-y-fondo div{
+        width: 95%;
+    }
+    .ancho-necesario{
+        width: 100%;
     }
 
 }
