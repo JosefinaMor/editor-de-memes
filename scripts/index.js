@@ -220,7 +220,7 @@ const graduacionDeFiltroSaturado = () =>{
 }
 
 const graduacionDeFiltroNegativo = () =>{
-    const valor = inputRangoNegativo.value;
+    const valor =  inputRangoNegativo.value;
     conteinerMeme.style.filter = "invert(" + valor + ")";
 }
 
