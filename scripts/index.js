@@ -1,3 +1,6 @@
+// Es muy rara esta manera de ordenar los imports del DOM. Si bien acuerdo en que se ve prolijo, 
+// no es lo usual, y en un trabajo muy probablemente te pidan que no lo hagas. 
+
 //señalizacion de partes para el modo claro
 const cambioBody             = document.querySelector("body");
 const barraNavegacion        = document.getElementById("barra-navegacion");
@@ -97,6 +100,10 @@ const aparecerAsideTexto = () =>{
 }
 
 const cambioDeModo = () =>{
+    // No esta mal esta manera de hacer el cambio de modo, pero me parece muchisimo mas sencillo como lo 
+    // explique en clase, dandole una clase al body. 
+    // En particular, esta estrategia no es *escalable*. Imaginate si la web creciera
+    // y agregara mas secciones: mantener este modo oscuro seria un infierno!
     cambioBody.classList.toggle("modoClaro");
     barraNavegacion.classList.toggle("modo-claro-barra-navegacion");
     asideImagen.classList.toggle("modoClaro");
@@ -124,6 +131,12 @@ const cambioDeModo = () =>{
     divInputColorFondo.classList.toggle("modoClaroInput");
     botonReseteoFiltros.classList.toggle("modoClaroInput");
 
+    // Dejá los espacios necesarios en javascript, sino la lectura se dificulta
+    // if (cambioBody.classList == "modoClaro") {
+        
+    // } else {
+        
+    // }   
     if(cambioBody.classList == "modoClaro"){
         botonModoClaro.innerHTML = '<i class="far fa-lightbulb"></i>Modo claro</button>';
     }else{
@@ -139,6 +152,8 @@ const salirAsideImagen = () =>{
 
 const insertaImagen = () =>{
     const valor = urlImagen.value;
+    // mejor usar interpolacion
+    // conteinerMeme.style.backgroundImage = `url("${valor}")`;
     conteinerMeme.style.backgroundImage = "url(" + valor +")";//cambiar por fondo url
 }
 
@@ -151,12 +166,43 @@ const elegirColorParaBlend = () =>{
 const elegirTipoDeBlend = () =>{
     let valor = modoBlendFondoEImagen.options[modoBlendFondoEImagen.selectedIndex];
     valor = valor.value;
+    // no dejes console log en una entrega
     console.log(valor);
     conteinerMeme.style.mixBlendMode = valor;
 }
 
+// El problema de resolver la funcionalidad de esta manera es que los filtros se pisan entre si
+// Al decir " imagenDelMeme.style.filter = " estoy diciendo "va a ser igual a esto, y reemplazar 
+// cualquier valor que tuviera antes" 
+// Por eso si establezco un brillo, y despues opacidad, el valor del brillo se pierde
+// Una manera de resolverlo es asignar todas las variables a la vez:
+
+// const cambiarFiltros = () => {
+//     imagen.style.filter = `
+//     brightness(${inputRangoBrillo.value}) opacity(${inputRangoOpacidad.value}) 
+//     blur(${inputRangoDesenfoque.value}px) contrast(${inputRangoContraste.value}%) 
+//     grayscale(${inputRangoGrises.value}%) hue-rotate(${inputRangoHue.value}deg) 
+//     sepia(${inputRangoSepia.value}%) saturate(${inputRangoSaturado.value}%) 
+//     invert(${inputRangoNegativo.value})
+//     `;
+// }
+
+// Y despues, cada funcion onchange llama a la misma: 
+
+// inputRangoBrillo.onchange =  cambiarFiltros
+// inputRangoOpacidad.onchange = cambiarFiltros
+// inputRangoContraste.onchange =  cambiarFiltros
+// inputRangoDesenfoque.onchange =  cambiarFiltros
+// inputRangoGrises.onchange = cambiarFiltros
+// inputRangoSepia.onchange =  cambiarFiltros
+// inputRangoHue.onchange = cambiarFiltros
+// inputRangoSaturado.onchange = cambiarFiltros
+// inputRangoNegativo.onchange = cambiarFiltros
+
+
 const graduacionDeFiltroBrillo = () =>{
     const valor = inputRangoBrillo.value;
+    // privilegia usar interpolacion. mismo para todas las demas variables
     conteinerMeme.style.filter = "brightness(" + valor + ")";
 }
 
@@ -246,6 +292,8 @@ const desaparecerBloqueTextoAbajo = () =>{
 }
 
 const cambiarLetra = () =>{
+    // no llegamos a ver esto en clase. si sabes exactamente lo que estas haciendo, lo banco
+    // si no tenes idea lo que estas haciendo aca, es un problema. 
     let valor = tipoDeLetra.options[tipoDeLetra.selectedIndex];
     valor = valor.value;
     textoArriba.style.fontFamily = valor;
