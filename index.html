@@ -29,6 +29,8 @@
         <nav>
             <h1>Generador de Memes</h1>
             <ul id="botones-del-nav">
+                <!-- No está mal que agregues comentarios, pero acá quizá te estás excediendo. 
+                Con identificar las secciones, ya estás bien.  -->
                 <!-- boton para aparecer y desaparecer el aside de imagen -->
                 <li><button id="boton-aside-imagen" aria-label="aparecer opciones de imagen"><i class="fas fa-file-image"></i>Imagen</button></li>
                 <!-- boton para aparecer y desaparecer el aside de texto -->
@@ -44,10 +46,19 @@
         <article id="fondo-meme" class="fondo-meme">
             <p id="texto-arriba" class="texto-meme texto-arriba">TOP TEXT</p>
             <p id="texto-abajo" class="texto-meme texto-abajo">BOTTOM TEXT</p>
+            <!-- Aqui hace falta un aria-label para que el lector de pantalla sepa que hace esto -->
             <div id="conteiner-meme" class="conteiner-meme">
                 <!-- en este div se agrega la imagen del meme que abarca todo el div  -->
             </div>
         </article>
+        <!-- Agrega saltos de linea cuando el HTML es muy largo, sino el lector debe hacer scroll
+        <button id="boton-descarga-meme" class="boton-descargar" aria-label="descargar imagen">
+            <i class="fas fa-download"></i>
+            Descaragar meme
+        </button> -->
+
+
+        <!-- ojo con la palabra "descaragar"! -->
         <button id="boton-descarga-meme" class="boton-descargar" aria-label="descargar imagen"><i class="fas fa-download"></i>Descaragar meme</button>
     </main>
 
@@ -59,6 +70,7 @@
             <button id="boton-equis-imagen" class="boton-equis" aria-label="salir de opciones de imagen"><i class="far fa-times-circle"></i></button>
         </section>
         <section>
+            <!-- esto es un label, no un titulo. idem para todos tus h3 -->
             <h3>URL</h3>
             <!-- input en donde se ingresa el url de la imagen -->
             <input aria-label="url de imagen" id="url-imagen" class="input-texto" type="text">
